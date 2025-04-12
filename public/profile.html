@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+</head>
+<body>
+  <h2>Welcome, <span id="name">User</span>!</h2>
+  <p>Email: <span id="email">email@example.com</span></p>
+  <a href="/logout">Logout</a>
+
+  <script>
+    fetch('/userdata')
+      .then(response => {
+        if (!response.ok) throw new Error('Not logged in');
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById('name').textContent = data.username;
+        document.getElementById('email').textContent = data.email;
+      })
+      .catch(() => {
+        alert('Please log in first.');
+        window.location.href = '/login.html';
+      });
+  </script>
+</body>
+</html>
