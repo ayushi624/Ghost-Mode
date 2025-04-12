@@ -177,7 +177,7 @@ body {
 /* 🔲 Disconnect Banner */
 .disconnect-banner {
   position: relative;
-  background-image: url("img/banner 2.webp");
+  background-image: url("https://minga-test.myshopify.com/cdn/shop/files/testB-desktop_97957b08-9301-4804-8aaf-87ba8eff8baf.jpg?width=3200");
   background-size: cover;
   background-position: center;
   height: 650px;
@@ -246,7 +246,7 @@ body {
 /* ♻ Trash Banner */
 .trash-banner {
   position: relative;
-  background-image: url("img/banner3.webp");
+  background-image: url("https://minga-test.myshopify.com/cdn/shop/files/cover-desktop.jpg?width=3200");
   background-size: cover;
   background-position: center;
   height: 500px;
