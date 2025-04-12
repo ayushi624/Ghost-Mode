@@ -42,3 +42,25 @@ document.addEventListener("click", (e) => {
     saleDropdown.style.display = "none";
   }
 });
+
+const collectionLink = document.getElementById('collectionLink');
+const collectionDropdown = document.getElementById('collectionDropdown');
+
+// Show dropdown on hover
+collectionLink.addEventListener('mouseenter', () => {
+  collectionDropdown.style.display = 'block';
+});
+
+// Hide when not hovering on link or dropdown
+collectionLink.addEventListener('mouseleave', () => {
+  setTimeout(() => {
+    if (!collectionDropdown.matches(':hover')) {
+      collectionDropdown.style.display = 'none';
+    }
+  }, 200);
+});
+
+collectionDropdown.addEventListener('mouseleave', () => {
+  collectionDropdown.style.display = 'none';
+});
+
