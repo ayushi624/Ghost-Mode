@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost Mode - E-commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <div class="dark-mode-toggle">
+      <button id="themeToggle">Toggle Dark Mode</button>
+    </div>
+
+    <!-- Product Page Content -->
+    <div id="product-page" class="container">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">HOME</a> / <span id="product-name-breadcrumb">RAW WASHED SWEATPANTS</span>
+      </div>
+
+      <!-- Product Detail Grid -->
+      <div class="product-grid">
+        <!-- Product Gallery -->
+        <div class="product-gallery">
+          <div class="main-image">
+            <img id="mainImage" src="https://us.mingalondon.com/cdn/shop/files/gritty-sweat-shorts_1_720x.jpg?v=1742402507" alt="Product Image">
+          </div>
+          <div class="thumbnail-container" id="thumbnailContainer">
+            <!-- Thumbnails will be added here by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+          <h1 id="product-name">RAW WASHED SWEATPANTS</h1>
+          <p id="product-price" class="price">Rs. 2,850</p>
+          
+          <!-- Size Selection -->
+          <div class="size-selection">
+            <div class="size-header">
+              <label>SIZE</label>
+              <button id="sizeGuide">Size guide</button>
+            </div>
+            <div class="size-buttons" id="sizeButtons">
+              <!-- Size buttons will be added here by JavaScript -->
+            </div>
+          </div>
+          
+          <!-- Color Selection -->
+          <div class="color-selection">
+            <label>COLOR</label>
+            <div class="color-buttons" id="colorButtons">
+              <!-- Color buttons will be added here by JavaScript -->
+            </div>
+          </div>
+          
+          <!-- Add to Bag Button -->
+          <button id="addToBag" class="add-to-bag-button">ADD TO BAG</button>
+          
+          <!-- Shipping Info -->
+          <div class="shipping-info">
+            <div class="info-box">
+              <span class="icon">↩</span>
+              <div class="info-text">30 DAYS<br>RETURN POLICY</div>
+            </div>
+            <div class="info-box">
+              <span class="icon">✈</span>
+              <div class="info-text">EXPRESS SHIPPING<br>AVAILABLE</div>
+            </div>
+          </div>
+          
+          <!-- Product Tabs -->
+          <div class="product-tabs">
+            <div class="tab">
+              <button class="tab-button" onclick="toggleTab('description')">DESCRIPTION</button>
+              <div id="description" class="tab-content">
+                <p>We bet these are in your moodboard.</p>
+                <ul>
+                  <li>Black washed sweatpants</li>
+                  <li>Grey sigillum embroidered patches</li>
+                  <li>Signature embroidered back pocket detail</li>
+                  <li>Elasticated drawstring waist</li>
+                  <li>Wide leg</li>
+                  <li>Relaxed fit</li>
+                  <li>Side pockets</li>
+                  <li>Raw hem finish</li>
+                  <li>70% cotton, 30% polyester</li>
+                </ul>
+                <p>Modle wears size S and is 165 cm | 5'5" tall</p>
+              </div>
+            </div>
+            
+            <div class="tab">
+              <button class="tab-button" onclick="toggleTab('delivery')">DELIVERY & RETURNS</button>
+              <div id="delivery" class="tab-content" style="display: none;">
+                <p>Free standard shipping on all orders over Rs. 5,000.</p>
+                <p>Express shipping available for an additional fee.</p>
+                <p>Returns accepted within 30 days of delivery. Items must be unworn with original tags attached.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Complete The Look Section -->
+      <section class="complete-look">
+        <h2>COMPLETE THE LOOK</h2>
+        <div class="related-products" id="relatedProducts">
+          <!-- Related products will be added here by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Product Reviews Section -->
+      <section class="product-reviews">
+        <h2>CUSTOMER REVIEWS</h2>
+        <div class="review-stats">
+          <div class="average-rating">
+            <span class="big-rating">4.8</span>
+            <div class="stars">★★★★★</div>
+            <span>Based on 12 reviews</span>
+          </div>
+          <div class="rating-breakdown">
+            <div class="rating-bar">
+              <span>5 Stars</span>
+              <div class="bar">
+                <div class="fill" style="width: 85%;"></div>
+              </div>
+              <span>85%</span>
+            </div>
+            <div class="rating-bar">
+              <span>4 Stars</span>
+              <div class="bar">
+                <div class="fill" style="width: 10%;"></div>
+              </div>
+              <span>10%</span>
+            </div>
+            <div class="rating-bar">
+              <span>3 Stars</span>
+              <div class="bar">
+                <div class="fill" style="width: 5%;"></div>
+              </div>
+              <span>5%</span>
+            </div>
+            <div class="rating-bar">
+              <span>2 Stars</span>
+              <div class="bar">
+                <div class="fill" style="width: 0%;"></div>
+              </div>
+              <span>0%</span>
+            </div>
+            <div class="rating-bar">
+              <span>1 Star</span>
+              <div class="bar">
+                <div class="fill" style="width: 0%;"></div>
+              </div>
+              <span>0%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="reviews-list" id="reviewsList">
+          <!-- Reviews will be added here by JavaScript -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
