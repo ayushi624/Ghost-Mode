@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clothing Page</title>
+  <link rel="stylesheet" href="C:\Users\vrind\OneDrive\Desktop\ghost mode\shooping.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>CLOTHING</h1>
+    <nav class="nav-bar">
+      <button>NEW IN</button>
+      <button>TOPS & TEES</button>
+      <button>BOTTOMS</button>
+      <button>KNITWEAR</button>
+      <button>HOODIES</button>
+      <button>JACKETS</button>
+      <button>ACCESSORIES</button>
+      <button>MOST WANTED</button>
+      <button>SALE</button>
+    </nav>
+  </header>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <div class="filter-dropdown">
+      <label for="product-type">PRODUCT TYPE</label>
+      <select id="product-type">
+        <option value="">All</option>
+        <option value="tshirt">T-Shirt</option>
+        <option value="sweater">Sweater</option>
+        <option value="hoodie">Hoodie</option>
+        <option value="jacket">Jacket</option>
+      </select>
+    </div>
+
+    <div class="filter-dropdown">
+      <label for="size">SIZE</label>
+      <select id="size">
+        <option value="">All</option>
+        <option value="xs">XS</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+      </select>
+    </div>
+
+    <div class="filter-dropdown">
+      <label for="color">COLOUR</label>
+      <select id="color">
+        <option value="">All</option>
+        <option value="black">Black</option>
+        <option value="white">White</option>
+        <option value="grey">Grey</option>
+        <option value="red">Red</option>
+      </select>
+    </div>
+
+    <div class="filter-dropdown">
+      <label for="sort">SORT</label>
+      <select id="sort">
+        <option value="">Default</option>
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <main class="product-grid" id="product-grid"></main>
+
+  <!-- HELP BUTTON -->
+  <button class="help-button">Help</button>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Clothing Co. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <script src="C:\Users\vrind\OneDrive\Desktop\ghost mode\shopping.js"></script>
+</body>
+</html>
