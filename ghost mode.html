@@ -1,212 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GHOST MODE - Collections</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #fff;
-      color: #000;
+      color: #111;
     }
+
     header {
-      background: #000;
+      background-color: #000;
       color: #fff;
-      padding: 20px;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header a {
-      color: white;
+
+    header strong {
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff;
       margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+
+    nav a:hover {
+      color: #ff5252;
+    }
+
     .collections {
-      padding: 40px 20px;
+      padding: 60px 40px;
+      background-color: #f9f9f9;
       text-align: center;
     }
+
+    .collections h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
     .collection-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .collection {
-      text-align: left;
-    }
-    .collection img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .collection h3 {
-      margin: 10px 0 5px;
-    }
-    .collection a {
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    footer {
-      background: #000;
-      color: white;
-      padding: 40px 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 30px;
     }
+
+    .collection {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .collection:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .collection img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .collection h3 {
+      margin: 15px;
+      font-size: 18px;
+    }
+
+    .collection a {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .collection a:hover {
+      border-color: #000;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 60px 40px 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
     footer h4 {
       margin-bottom: 15px;
+      font-size: 16px;
+      font-weight: 600;
     }
+
     footer a {
-      color: white;
+      color: #ccc;
       text-decoration: none;
-      display: block;
       margin-bottom: 10px;
+      display: block;
       font-size: 14px;
+      transition: color 0.3s ease;
     }
+
+    footer a:hover {
+      color: #fff;
+    }
+
     .footer-bottom {
       text-align: center;
-      background: #000;
-      color: white;
-      padding: 10px;
+      background-color: #000;
+      color: #aaa;
+      padding: 15px;
       font-size: 13px;
+    }
+
+    .footer-bottom a {
+      color: #bbb;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .collections {
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div><strong>GHOST MODE</strong></div>
+  <strong>GHOST MODE</strong>
   <nav>
     <a href="#">NEW IN</a>
     <a href="#">SHOP</a>
     <a href="#">COLLECTIONS</a>
-    <a href="#" style="color:red">SALE</a>
+    <a href="#" style="color: #ff5252;">SALE</a>
   </nav>
 </header>
 
 <section class="collections">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Collections - Ghost Mode</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background: #fff;
-        }
-    
-        header {
-          background: #000;
-          color: #fff;
-          padding: 20px;
-          text-align: center;
-          font-size: 24px;
-          font-weight: bold;
-        }
-    
-        .collection-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 30px;
-          padding: 40px;
-        }
-    
-        .collection {
-          text-align: center;
-        }
-    
-        .collection img {
-          width: 100%;
-          height: 350px;
-          border-radius: 10px;
-        }
-    
-        .collection h3 {
-          margin-top: 15px;
-          font-size: 18px;
-          font-weight: bold;
-        }
-    
-        .collection a {
-          display: inline-block;
-          margin-top: 8px;
-          color: black;
-          text-decoration: none;
-          font-weight: 600;
-          border-bottom: 2px solid transparent;
-          transition: border-color 0.2s;
-        }
-    
-        .collection a:hover {
-          border-color: black;
-        }
-      </style>
-    </head>
-    <body>
-    
-      <header>Ghost Mode Collections</header>
-    
-      <div class="collection-grid">
-        <!-- Row 1 -->
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/capa_colecao.jpg?v=1743516983" alt="Chrome Angels">
-          <h3>CHROME ANGELS</h3>
-          <a href="chrome-angels.html">VIEW COLLECTION</a>
-        </div>
-    
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/menu.jpg?v=1742311213" alt="Disconnect">
-          <h3>DISCONNECT</h3>
-          <a href="disconnect.html">VIEW COLLECTION</a>
-        </div>
-    
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/capa_menu.jpg?v=1741003788" alt="Trash Cult">
-          <h3>TRASH CULT</h3>
-          <a href="trash-cult.html">VIEW COLLECTION</a>
-        </div>
-    
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/not_your_doll.jpg?v=1738672150" alt="Not Your Doll">
-          <h3>NOT YOUR DOLL</h3>
-          <a href="not-your-doll.html">VIEW COLLECTION</a>
-        </div>
-    
-        <!-- Row 2 -->
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/dark-wash-2.jpg?v=1737732710" alt="Dark Wash">
-          <h3>DARK WASH</h3>
-          <a href="dark-wash.html">VIEW COLLECTION</a>
-        </div>
-    
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/soft-lounge--new-mobile.webp?v=1736437821" alt="Soft Lounge">
-          <h3>SOFT LOUNGE</h3>
-          <a href="soft-lounge.html">VIEW COLLECTION</a>
-        </div>
-    
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/newnewnnew.webp?v=1736437862" alt="Dark Echo">
-          <h3>DARK ECHO</h3>
-          <a href="dark-echo.html">VIEW COLLECTION</a>
-        </div>
-    
-        <div class="collection">
-          <img src="https://us.mingalondon.com/cdn/shop/collections/mob_4.webp?v=1736437906" alt="Abstrakt">
-          <h3>ABSTRAKT</h3>
-          <a href="abstrakt.html">VIEW COLLECTION</a>
-        </div>
-      </div>
-    
+  <h2>Explore Our Collections</h2>
+  <div class="collection-grid">
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/capa_colecao.jpg?v=1743516983" alt="Chrome Angels">
+      <h3>CHROME ANGELS</h3>
+      <a href="chrome-angels.html">VIEW COLLECTION</a>
+    </div>
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/menu.jpg?v=1742311213" alt="Disconnect">
+      <h3>DISCONNECT</h3>
+      <a href="disconnect.html">VIEW COLLECTION</a>
+    </div>
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/capa_menu.jpg?v=1741003788" alt="Trash Cult">
+      <h3>TRASH CULT</h3>
+      <a href="trash-cult.html">VIEW COLLECTION</a>
+    </div>
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/not_your_doll.jpg?v=1738672150" alt="Not Your Doll">
+      <h3>NOT YOUR DOLL</h3>
+      <a href="not-your-doll.html">VIEW COLLECTION</a>
+    </div>
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/dark-wash-2.jpg?v=1737732710" alt="Dark Wash">
+      <h3>DARK WASH</h3>
+      <a href="dark-wash.html">VIEW COLLECTION</a>
+    </div>
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/soft-lounge--new-mobile.webp?v=1736437821" alt="Soft Lounge">
+      <h3>SOFT LOUNGE</h3>
+      <a href="soft-lounge.html">VIEW COLLECTION</a>
+    </div>
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/newnewnnew.webp?v=1736437862" alt="Dark Echo">
+      <h3>DARK ECHO</h3>
+      <a href="dark-echo.html">VIEW COLLECTION</a>
+    </div>
+    <div class="collection">
+      <img src="https://us.mingalondon.com/cdn/shop/collections/mob_4.webp?v=1736437906" alt="Abstrakt">
+      <h3>ABSTRAKT</h3>
+      <a href="abstrakt.html">VIEW COLLECTION</a>
+    </div>
+  </div>
 </section>
 
 <footer>
@@ -241,7 +247,7 @@
 </footer>
 
 <div class="footer-bottom">
-  COPYRIGHT © 2025 GHOST MODE | <a href="#" style="color:lightgrey;">Privacy Policy</a> | <a href="#" style="color:lightgrey;">Terms of Use</a>
+  COPYRIGHT © 2025 GHOST MODE | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
 </div>
 
 </body>
