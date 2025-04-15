@@ -3,63 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clothing Page</title>
+  <title>Clothing Store</title>
   <link rel="stylesheet" href="shopping.css" />
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
     <h1>CLOTHING</h1>
     <nav class="nav-bar">
-      <button>NEW IN</button>
-      <button>TOPS & TEES</button>
-      <button>BOTTOMS</button>
-      <button>KNITWEAR</button>
-      <button>HOODIES</button>
-      <button>JACKETS</button>
-      <button>ACCESSORIES</button>
-      <button>MOST WANTED</button>
-      <button>SALE</button>
+      <button data-category="new">NEW IN</button>
+      <button data-category="tops">TOPS & TEES</button>
+      <button data-category="bottoms">BOTTOMS</button>
+      <button data-category="knitwear">KNITWEAR</button>
+      <button data-category="hoodies">HOODIES</button>
+      <button data-category="jackets">JACKETS</button>
+      <button data-category="accessories">ACCESSORIES</button>
+      <button data-category="most">MOST WANTED</button>
+      <button data-category="sale">SALE</button>
     </nav>
   </header>
 
-  <!-- FILTERS -->
-  <div class="filters">
+  <section class="filters">
     <div class="filter-dropdown">
       <label for="product-type">PRODUCT TYPE</label>
       <select id="product-type">
         <option value="">All</option>
-        <option value="tshirt">T-Shirt</option>
-        <option value="sweater">Sweater</option>
+        <option value="tops">T-Shirt</option>
         <option value="hoodie">Hoodie</option>
-        <option value="jacket">Jacket</option>
+        <option value="jackets">Jacket</option>
       </select>
     </div>
-
     <div class="filter-dropdown">
       <label for="size">SIZE</label>
       <select id="size">
         <option value="">All</option>
-        <option value="xs">XS</option>
         <option value="s">S</option>
         <option value="m">M</option>
         <option value="l">L</option>
-        <option value="xl">XL</option>
       </select>
     </div>
-
     <div class="filter-dropdown">
       <label for="color">COLOUR</label>
       <select id="color">
         <option value="">All</option>
         <option value="black">Black</option>
         <option value="white">White</option>
-        <option value="grey">Grey</option>
-        <option value="red">Red</option>
+        <option value="blue">Blue</option>
       </select>
     </div>
-
     <div class="filter-dropdown">
       <label for="sort">SORT</label>
       <select id="sort">
@@ -68,15 +58,20 @@
         <option value="desc">Price: High to Low</option>
       </select>
     </div>
+  </section>
+
+  <main id="product-grid" class="product-grid"></main>
+
+  <div class="cart-container">
+    <span id="cart-icon" title="Cart">🛒</span> 
+    <span id="cart-count">0</span>
+    <div id="cart-modal" class="cart-modal">
+      <button id="close-cart">×</button>
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+    </div>
   </div>
 
-  <!-- PRODUCTS -->
-  <main class="product-grid" id="product-grid"></main>
-
-  <!-- HELP BUTTON -->
-  <button class="help-button">Help</button>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 Clothing Co. All rights reserved.</p>
