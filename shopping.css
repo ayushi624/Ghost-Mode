@@ -75,7 +75,7 @@ h1 {
 /* Product Grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Four fixed columns */
   gap: 30px;
   padding: 0 10px;
 }
@@ -114,10 +114,9 @@ h1 {
   font-size: 24px;
   cursor: pointer;
   transition: 0.2s;
-  z-index: 2; /* <- This puts it above the overlay */
-  pointer-events: auto; /* <- Allows it to be clicked */
+  z-index: 2;
+  pointer-events: auto;
 }
-
 .heart.liked {
   color: red;
 }
@@ -138,9 +137,8 @@ h1 {
   transform: translateY(10px);
   transition: all 0.3s ease;
   pointer-events: none;
-  z-index: 1; /* <- Keeps it under the heart */
+  z-index: 1;
 }
-
 .product-card:hover .hover-overlay {
   opacity: 1;
   transform: translateY(0);
@@ -232,4 +230,17 @@ footer a {
   color: #fff;
   text-decoration: underline;
   margin: 0 5px;
+}
+
+/* ✅ Responsive Layout */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
