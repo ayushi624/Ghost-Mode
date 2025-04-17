@@ -1,20 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-</head>
-<body>
-  <h2>Login</h2>
-  <form action="/login" method="POST">
-    <label>Email:</label><br>
-    <input name="email" type="email" placeholder="Email" required><br><br>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- 🔳 Navbar -->
+      <div class="navbar">
+        <div class="nav-left">
+          <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="logo">Ghost Mode</div>
+          <div class="nav-links">
+            <a href="ghost mode.html" id="collectionLink">Collection</a>
+            <a href="#">Shop</a>
+            <a href="#">New In</a>
+            <a href="#" id="saleLink">Sale</a>
+          </div>
+        </div>
+        <div class="nav-right">
+          <button><i class="fas fa-search"></i></button>
+          <button><i class="fas fa-heart"></i></button>
+          <a href="http://localhost:3000/signup.html"><button><i class="fas fa-user"></i></button></a>
+          <button><i class="fas fa-shopping-cart"></i></button>
+        </div>
+      </div>
 
-    <label>Password:</label><br>
-    <input name="password" type="password" placeholder="Password" required><br><br>
+      <!-- ✅ Sliding Menu -->
+      <div
+        class="menu-overlay"
+        onclick="toggleMenu(document.querySelector('.menu-toggle'))"
+      ></div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="#"><span>🏠</span> Home</a>
+          </li>
+          <li>
+            <a href="#"><span>👕</span> Shop</a>
+          </li>
+          <li>
+            <a href="#"><span>🆕</span> New Arrivals</a>
+          </li>
+          <li>
+            <a href="#"><span>🔥</span> Best Sellers</a>
+          </li>
+          <li>
+            <a href="#"><span>🎯</span> Categories</a>
+          </li>
+          <li>
+            <a href="#"><span>📦</span> Orders</a>
+          </li>
+          <li>
+            <a href="#"><span>❤️</span> Wishlist</a>
+          </li>
+          <li>
+            <a href="#"><span>📞</span> Contact</a>
+          </li>
+          <li>
+            <a href="#"><span>ℹ️</span> About</a>
+          </li>
+        </ul>
+      </div>
 
-    <button type="submit">Login</button>
-  </form>
-  <p>Don't have an account? <a href="/signup.html">Sign up</a></p>
-</body>
+      <!-- ✅ Login Form -->
+      <div class="login-container">
+        <h2>LOGIN</h2>
+        <form action="/login" method="POST">
+          <input type="email" name="email" placeholder="Email" required />
+          <div class="forgot-password">
+            <a href="#" class="link">Forgot password?</a>
+          </div>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit" class="signin">Sign In</button>
+        </form>
+        <p class="para">
+          Don't have an account?
+          <a class="link" href="/signup.html">Create account</a>
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
