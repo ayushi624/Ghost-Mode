@@ -5,6 +5,10 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
@@ -30,44 +34,60 @@
         <div class="nav-right">
           <button><i class="fas fa-search"></i></button>
           <button><i class="fas fa-heart"></i></button>
-          <a href="http://localhost:3000/signup.html"><button><i class="fas fa-user"></i></button></a>
+          <a href="http://localhost:3000/signup.html"
+            ><button><i class="fas fa-user"></i></button
+          ></a>
           <button><i class="fas fa-shopping-cart"></i></button>
         </div>
       </div>
 
       <!-- ✅ Sliding Menu -->
-      <div
-        class="menu-overlay"
-        onclick="toggleMenu(document.querySelector('.menu-toggle'))"
-      ></div>
-      <div class="menu">
+      <div id="menuOverlay" class="menu-overlay"></div>
+      <div class="menu" id="menu">
         <ul>
           <li>
-            <a href="#"><span>🏠</span> Home</a>
+            <a href="#"
+              ><span class="material-symbols-outlined">home</span>Home</a
+            >
           </li>
           <li>
-            <a href="#"><span>👕</span> Shop</a>
+            <a href="#"
+              ><span class="material-symbols-outlined">checkroom</span>Clothing</a
+            >
           </li>
           <li>
-            <a href="#"><span>🆕</span> New Arrivals</a>
+            <a href="shoes.html"><span class="fas fa-shoe-prints"></span>Footwear</a>
           </li>
           <li>
-            <a href="#"><span>🔥</span> Best Sellers</a>
+            <a href="#"
+              ><span class="material-symbols-outlined">watch</span>Accessories</a
+            >
           </li>
           <li>
-            <a href="#"><span>🎯</span> Categories</a>
+            <a href="#"
+              ><span class="material-symbols-outlined">sell</span>Sale</a
+            >
           </li>
           <li>
-            <a href="#"><span>📦</span> Orders</a>
+            <a href="ghost mode.html"
+              ><span class="material-symbols-outlined">style</span>Collection</a
+            >
+          </li>
+  
+          <li>
+            <a href="#"
+              ><span class="material-symbols-outlined">email</span>Contact</a
+            >
           </li>
           <li>
-            <a href="#"><span>❤️</span> Wishlist</a>
+            <a href="#"
+              ><span class="material-symbols-outlined">group</span>About Us</a
+            >
           </li>
           <li>
-            <a href="#"><span>📞</span> Contact</a>
-          </li>
-          <li>
-            <a href="#"><span>ℹ️</span> About</a>
+            <a href="#"
+              ><span class="material-symbols-outlined">logout</span>Logout</a
+            >
           </li>
         </ul>
       </div>
@@ -94,5 +114,32 @@
         </p>
       </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtn = document.getElementById("menuToggle");
+        const menu = document.getElementById("menu");
+        const overlay = document.getElementById("menuOverlay");
+
+        toggleBtn.addEventListener("click", () => {
+          toggleBtn.classList.toggle("active");
+          menu.classList.toggle("open");
+          overlay.classList.toggle("active");
+
+          const items = menu.querySelectorAll("li");
+          items.forEach((item) => {
+            item.style.animation = "none";
+            item.offsetHeight;
+            item.style.animation = "";
+          });
+        });
+
+        overlay.addEventListener("click", () => {
+          toggleBtn.classList.remove("active");
+          menu.classList.remove("open");
+          overlay.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
