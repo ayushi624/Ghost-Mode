@@ -21,27 +21,6 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
 });
 
-const saleLink = document.getElementById("saleLink");
-const saleDropdown = document.getElementById("saleDropdown");
-
-saleLink.addEventListener("mouseenter", () => {
-  saleDropdown.style.display = "block";
-});
-
-saleDropdown.addEventListener("mouseleave", () => {
-  saleDropdown.style.display = "none";
-});
-
-// Optional: hide on scroll or click elsewhere
-window.addEventListener("scroll", () => {
-  saleDropdown.style.display = "none";
-});
-
-document.addEventListener("click", (e) => {
-  if (!saleDropdown.contains(e.target) && e.target !== saleLink) {
-    saleDropdown.style.display = "none";
-  }
-});
 
 const collectionLink = document.getElementById('collectionLink');
 const collectionDropdown = document.getElementById('collectionDropdown');
@@ -63,4 +42,3 @@ collectionLink.addEventListener('mouseleave', () => {
 collectionDropdown.addEventListener('mouseleave', () => {
   collectionDropdown.style.display = 'none';
 });
-
