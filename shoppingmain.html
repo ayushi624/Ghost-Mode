@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clothing Store</title>
   <link rel="stylesheet" href="shopping.css" />
 </head>
@@ -60,13 +60,35 @@
     </div>
   </section>
 
+  <div class="nav-right">
+    <button><i class="fas fa-search"></i></button>
+    <button><i class="fas fa-heart"></i></button>
+    <button><i class="fas fa-user"></i></button>
+    <button><i class="fas fa-shopping-cart"></i></button>
+  </div>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <div class="menu" id="menu">
+    <ul>
+      <li><a href="#"><span class="material-symbols-outlined">home</span>Home</a></li>
+      <li><a href="#"><span class="material-symbols-outlined">checkroom</span>Clothing</a></li>
+      <li><a href="shoes.html"><span class="fas fa-shoe-prints"></span>Footwear</a></li>
+      <li><a href="#"><span class="material-symbols-outlined">watch</span>Accessories</a></li>
+      <li><a href="#"><span class="material-symbols-outlined">sell</span>Sale</a></li>
+      <li><a href="ghost mode.html"><span class="material-symbols-outlined">style</span>Collection</a></li>
+      <li><a href="#"><span class="material-symbols-outlined">email</span>Contact</a></li>
+      <li><a href="#"><span class="material-symbols-outlined">group</span>About Us</a></li>
+      <li><a href="#"><span class="material-symbols-outlined">logout</span>Logout</a></li>
+    </ul>
+  </div>
+
   <main id="product-grid" class="product-grid"></main>
 
   <div class="cart-container">
-    <span id="cart-icon" title="Cart">🛒</span> 
+    <span id="cart-icon" title="Cart">🛒</span>
     <span id="cart-count">0</span>
     <div id="cart-modal" class="cart-modal">
-      <button id="close-cart">×</button>
+      <button id="close-cart">&times;</button>
       <h2>Your Cart</h2>
       <ul id="cart-items"></ul>
     </div>
