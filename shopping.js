@@ -110,7 +110,6 @@ function showCart() {
   cartItems.appendChild(totalLi);
 }
 
-// Infinite Scroll
 window.addEventListener('scroll', () => {
   const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
   if (nearBottom && loadedCount < products.length) {
@@ -131,6 +130,5 @@ cartIcon.onclick = () => {
   cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
 };
 
-// Initial Load
 renderProductsBatch();
 updateCartCount();
