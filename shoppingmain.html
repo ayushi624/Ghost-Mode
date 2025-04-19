@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fashion Store - Infinite Scroll</title>
-  <!-- Link to the external CSS file -->
+  <title>Minga Clothing</title>
   <link rel="stylesheet" href="shopping.css">
 </head>
 <body>
 
-  <h1>🛍️ Minga Clothing</h1>
+  <header>
+    <h1>MINGA CLOTHING</h1>
+    <div id="cart-icon">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </header>
 
-  <div id="cart-icon">
-    🛒 <span id="cart-count">0</span>
+  <div class="controls">
+    <select id="sort">
+      <option value="">Sort by</option>
+      <option value="asc">Price: Low to High</option>
+      <option value="desc">Price: High to Low</option>
+    </select>
   </div>
-
-  <select id="sort">
-    <option value="">Sort By</option>
-    <option value="asc">Price: Low to High</option>
-    <option value="desc">Price: High to Low</option>
-  </select>
 
   <div id="product-grid" class="product-grid"></div>
   <div id="loading">Loading...</div>
@@ -31,7 +33,6 @@
     <ul id="cart-items"></ul>
   </div>
 
-  <!-- Link to the external JavaScript file -->
   <script src="shopping.js"></script>
 </body>
 </html>
