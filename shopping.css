@@ -1,169 +1,137 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f9f9f9;
+  font-family: "Helvetica Neue", sans-serif;
+  background: #fff;
   color: #111;
 }
 
-header {
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  z-index: 1000;
 }
 
-h1 {
-  margin: 0;
-  font-size: 28px;
-  letter-spacing: 2px;
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-#cart-icon {
-  font-size: 22px;
+.nav-links a {
+  margin: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sale {
+  color: red;
+}
+
+.icons span {
+  margin-left: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 1.8rem;
+}
+
+.filters,
+.dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filters button,
+.dropdown-toggle {
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dropdown {
   position: relative;
 }
 
-#cart-count {
-  background: red;
-  color: white;
-  border-radius: 50%;
-  padding: 3px 6px;
-  font-size: 12px;
+.dropdown-menu {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
 }
 
-.controls {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
 }
 
-.controls select {
-  padding: 8px 12px;
-  font-size: 14px;
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown.active .dropdown-menu {
+  display: block;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .product-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: relative;
+  background: #f6f6f6;
+  border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s ease;
-  position: relative;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.02);
 }
 
 .product-card img {
   width: 100%;
-  height: 260px;
-  object-fit: cover;
+  display: block;
 }
 
 .heart {
   position: absolute;
   top: 10px;
-  right: 10px;
-  font-size: 20px;
-  color: #ccc;
+  right: 12px;
+  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 2;
-}
-
-.heart.liked {
-  color: red;
-}
-
-.hover-overlay {
-  padding: 10px;
-  text-align: center;
-}
-
-.add-to-bag {
-  background: black;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.sizes span {
-  background: #eee;
-  margin: 0 4px;
-  padding: 3px 6px;
-  border-radius: 3px;
-  font-size: 12px;
-}
-
-.product-info {
-  padding: 10px;
-  text-align: center;
-}
-
-.product-name {
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.product-price {
-  color: green;
-  margin-top: 4px;
-}
-
-.cart-modal {
-  position: fixed;
-  top: 70px;
-  right: 20px;
   background: white;
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 280px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  display: none;
-  z-index: 100;
+  border-radius: 50%;
+  padding: 4px;
 }
 
-.cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cart-header h3 {
-  margin: 0;
-}
-
-#close-cart {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-#cart-items {
-  margin-top: 10px;
-  list-style: none;
-  padding-left: 0;
-}
-
-#loading {
+.product-details {
+  padding: 1rem;
   text-align: center;
-  padding: 20px;
-  font-style: italic;
+}
+
+.price {
+  font-weight: bold;
 }
