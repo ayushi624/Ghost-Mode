@@ -1,109 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GHOST MODE | Sale</title>
+  <meta charset="UTF-8">
+  <title>Ghost Mode | Sale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: #fff;
-      color: #000;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
     }
 
-    header {
-      background: #000;
+    .header {
+      background-color: black;
       color: white;
-      padding: 15px 25px;
+      padding: 16px 25px;
     }
 
-    .header-container {
+    .header-flex {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
+    .header-left h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
       letter-spacing: 2px;
+      margin: 0;
     }
 
-    .header-nav {
-      display: flex;
-      gap: 18px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-
-    .header-nav a {
+    .header-right a {
       color: white;
       text-decoration: none;
-      padding: 6px;
-      transition: 0.3s ease;
-    }
-
-    .header-nav a:hover {
-      background: #444;
-      border-radius: 3px;
-    }
-
-    @media (max-width: 600px) {
-      .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .header-nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
     .filters {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 20px;
+      gap: 20px;
+      padding: 25px 10px;
       border-bottom: 1px solid #ccc;
+      background-color: #f8f8f8;
     }
 
     .filters select {
-      padding: 10px;
+      padding: 12px 14px;
       font-size: 15px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 6px;
+      background-color: white;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
       padding: 30px;
     }
 
     .product {
       text-align: center;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 12px;
+      transition: 0.3s ease;
+    }
+
+    .product:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transform: scale(1.01);
     }
 
     .product img {
       width: 100%;
       height: auto;
       border-radius: 8px;
-      border: 1px solid #eee;
     }
 
     .product .name {
       font-size: 15px;
-      margin: 8px 0 5px;
+      margin: 10px 0 4px;
+      font-weight: 600;
     }
 
     .product .price {
@@ -114,7 +96,7 @@
 
     .product .sale-price {
       font-size: 16px;
-      color: red;
+      color: #d33;
       font-weight: bold;
     }
 
@@ -124,39 +106,47 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+      font-size: 14px;
     }
 
     @media (max-width: 768px) {
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 15px;
-        gap: 15px;
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
       }
-    }
 
-    @media (max-width: 480px) {
-      .product-grid {
-        grid-template-columns: 1fr;
+      .header-right {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .filters {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-container">
-      <div class="logo">GHOST MODE</div>
-      <nav class="header-nav">
-        <a href="#">New</a>
+  <header class="header">
+    <div class="header-flex">
+      <div class="header-left">
+        <h1>GHOST MODE</h1>
+      </div>
+      <div class="header-right">
+        <a href="#">New In</a>
         <a href="#">Shop</a>
         <a href="#">Collections</a>
-        <a href="#" style="color: #ff5252;">Sale</a>
-      </nav>
+        <a href="#">Sale</a>
+      </div>
     </div>
   </header>
 
-  <div class="filters">
-    <select id="typeFilter">
+  <section class="filters">
+    <select id="productTypeFilter">
       <option value="">Product Type</option>
       <option value="Baby Tees">Baby Tees</option>
       <option value="Bags">Bags</option>
@@ -178,171 +168,157 @@
       <option value="Purple">Purple</option>
       <option value="Brown">Brown</option>
     </select>
-  </div>
+  </section>
 
-  <div class="product-grid" id="productGrid"></div>
+  <section class="product-grid" id="productGrid"></section>
 
   <footer>© 2025 Ghost Mode. All rights reserved.</footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const products = [
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Apollo_Striped_Baby_Tee6_540x.jpg?v=1724428915",
-          name: "Apollo Striped Baby Tee",
-          category: "Baby Tees",
-          sizes: ["S", "M"],
-          color: "Pink",
-          originalPrice: "₹4,200",
-          salePrice: "₹2,100"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Orbit_Baby_Tee3_540x.jpg?v=1724430563",
-          name: "Orbit Baby Tee",
-          category: "Baby Tees",
-          sizes: ["S"],
-          color: "Blue",
-          originalPrice: "₹4,200",
-          salePrice: "₹2,100"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Cherry_Fields_Cami_Top3_540x.jpg?v=1718883358",
-          name: "Cherry Fields Cami Top",
-          category: "Cami Tops",
-          sizes: ["S", "M"],
-          color: "Pink",
-          originalPrice: "₹3,700",
-          salePrice: "₹1,500"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Zoey_Plaid_Fluffy_Cardigan2_540x.jpg?v=1729260918",
-          name: "Zoey Plaid Fluffy Cardigan",
-          category: "Cardigans",
-          sizes: ["S", "M", "L"],
-          color: "Black",
-          originalPrice: "₹6,600",
-          salePrice: "₹3,300"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Ingrid_Cropped_Blazer8_540x.jpg?v=1724429375",
-          name: "Ingrid Cropped Blazer",
-          category: "Blazer",
-          sizes: ["L"],
-          color: "Black",
-          originalPrice: "₹6,300",
-          salePrice: "₹4,300"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/rhapsody-washed-brown-crossbody-bag_1_540x.jpg?v=1738344536",
-          name: "Rhapsody Crossbody Bag",
-          category: "Bags",
-          sizes: ["M"],
-          color: "Brown",
-          originalPrice: "₹1,050",
-          salePrice: "₹780"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/miss-you-jacquard-cardigan1_540x.jpg?v=1737490548",
-          name: "Miss You Jacquard Cardigan",
-          category: "Cardigans",
-          sizes: ["S", "L"],
-          color: "Pink",
-          originalPrice: "₹8,700",
-          salePrice: "₹4,700"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/audrey-patch-brown-plaid-blazer_4_540x.jpg?v=1733415212",
-          name: "Audrey Plaid Blazer",
-          category: "Blazer",
-          sizes: ["L"],
-          color: "Brown",
-          originalPrice: "₹7,500",
-          salePrice: "₹4,599"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Minga_Sloppy_Wrist_Top3_540x.jpg?v=1725536898",
-          name: "Ghost x Sloppy Wrist Top",
-          category: "Baby Tees",
-          sizes: ["S"],
-          color: "Blue",
-          originalPrice: "₹1,999",
-          salePrice: "₹999"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/products/Ripley-Jacquard-Knit-Cardigan4_540x.jpg?v=1701700880",
-          name: "Ripley Jacquard Knit Cardigan",
-          category: "Cardigans",
-          sizes: ["S", "M"],
-          color: "Black",
-          originalPrice: "₹1,250",
-          salePrice: "₹899"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Nyx_Furry_Crossbody_Bag1_540x.jpg?v=1726071363",
-          name: "Nyx Furry Crossbody Bag",
-          category: "Bags",
-          sizes: ["L"],
-          color: "Black",
-          originalPrice: "₹1,099",
-          salePrice: "₹799"
-        },
-        {
-          img: "https://us.mingalondon.com/cdn/shop/files/Bunny_Plush_Backpack1_540x.jpg?v=1722611070",
-          name: "Ghost x Ema Gaspar Bunny Plush Backpack",
-          category: "Bags",
-          sizes: ["L"],
-          color: "Purple",
-          originalPrice: "₹599",
-          salePrice: "₹450"
-        }
-      ];
+    const products = [
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Apollo_Striped_Baby_Tee6_540x.jpg?v=1724428915",
+        name: "Apollo Striped Baby Tee",
+        category: "Baby Tees",
+        sizes: ["S", "M"],
+        color: "Pink",
+        originalPrice: "₹4,200",
+        salePrice: "₹2,100"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Orbit_Baby_Tee3_540x.jpg?v=1724430563",
+        name: "Orbit Baby Tee",
+        category: "Baby Tees",
+        sizes: ["S"],
+        color: "Blue",
+        originalPrice: "₹4,200",
+        salePrice: "₹2,100"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Cherry_Fields_Cami_Top3_540x.jpg?v=1718883358",
+        name: "Cherry Fields Cami Top",
+        category: "Cami Tops",
+        sizes: ["S", "M"],
+        color: "Pink",
+        originalPrice: "₹3,700",
+        salePrice: "₹1,500"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Zoey_Plaid_Fluffy_Cardigan2_540x.jpg?v=1729260918",
+        name: "Zoey Plaid Fluffy Cardigan",
+        category: "Cardigans",
+        sizes: ["S", "M", "L"],
+        color: "Black",
+        originalPrice: "₹6,600",
+        salePrice: "₹3,300"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Ingrid_Cropped_Blazer8_540x.jpg?v=1724429375",
+        name: "Ingrid Cropped Blazer",
+        category: "Blazer",
+        sizes: ["L"],
+        color: "Black",
+        originalPrice: "₹6,300",
+        salePrice: "₹4,300"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/rhapsody-washed-brown-crossbody-bag_1_540x.jpg?v=1738344536",
+        name: "Rhapsody Crossbody Bag",
+        category: "Bags",
+        sizes: ["M"],
+        color: "Brown",
+        originalPrice: "₹1,050",
+        salePrice: "₹780"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/miss-you-jacquard-cardigan1_540x.jpg?v=1737490548",
+        name: "Miss You Jacquard Cardigan",
+        category: "Cardigans",
+        sizes: ["S", "L"],
+        color: "Pink",
+        originalPrice: "₹8,700",
+        salePrice: "₹4,700"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/audrey-patch-brown-plaid-blazer_4_540x.jpg?v=1733415212",
+        name: "Audrey Plaid Blazer",
+        category: "Blazer",
+        sizes: ["L"],
+        color: "Brown",
+        originalPrice: "₹7,500",
+        salePrice: "₹4,599"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Minga_Sloppy_Wrist_Top3_540x.jpg?v=1725536898",
+        name: "Ghost x Sloppy Wrist Top",
+        category: "Baby Tees",
+        sizes: ["S"],
+        color: "Blue",
+        originalPrice: "₹1,999",
+        salePrice: "₹999"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/products/Ripley-Jacquard-Knit-Cardigan4_540x.jpg?v=1701700880",
+        name: "Ripley Jacquard Knit Cardigan",
+        category: "Cardigans",
+        sizes: ["S", "M"],
+        color: "Black",
+        originalPrice: "₹1,250",
+        salePrice: "₹899"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Nyx_Furry_Crossbody_Bag1_540x.jpg?v=1726071363",
+        name: "Nyx Furry Crossbody Bag",
+        category: "Bags",
+        sizes: ["L"],
+        color: "Black",
+        originalPrice: "₹1,099",
+        salePrice: "₹799"
+      },
+      {
+        img: "https://us.mingalondon.com/cdn/shop/files/Bunny_Plush_Backpack1_540x.jpg?v=1722611070",
+        name: "Ghost x Ema Gaspar Bunny Plush Backpack",
+        category: "Bags",
+        sizes: ["L"],
+        color: "Purple",
+        originalPrice: "₹599",
+        salePrice: "₹450"
+      }
+    ];
 
-      const productGrid = document.getElementById("productGrid");
-      const typeFilter = document.getElementById("typeFilter");
-      const sizeFilter = document.getElementById("sizeFilter");
-      const colorFilter = document.getElementById("colorFilter");
-
-      function displayProducts(filtered) {
-        productGrid.innerHTML = "";
-        if (filtered.length === 0) {
-          productGrid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center;">No sale products found.</p>`;
-          return;
-        }
-
-        filtered.forEach(p => {
-          const product = document.createElement("div");
-          product.className = "product";
-          product.innerHTML = `
+    function displayProducts(list) {
+      const container = document.getElementById("productGrid");
+      container.innerHTML = list.length
+        ? list.map(p => `
+          <div class="product">
             <img src="${p.img}" alt="${p.name}">
             <p class="name">${p.name}</p>
             <p class="price">${p.originalPrice}</p>
             <p class="sale-price">${p.salePrice}</p>
-          `;
-          productGrid.appendChild(product);
-        });
-      }
+          </div>`).join("")
+        : `<p style="grid-column: 1 / -1; text-align: center;">No products found.</p>`;
+    }
 
-      function applyFilters() {
-        const type = typeFilter.value.trim();
-        const size = sizeFilter.value.trim();
-        const color = colorFilter.value.trim();
+    function applyFilters() {
+      const type = document.getElementById("productTypeFilter").value;
+      const size = document.getElementById("sizeFilter").value;
+      const color = document.getElementById("colorFilter").value;
 
-        const filtered = products.filter(p => {
-          const matchType = !type || p.category === type;
-          const matchSize = !size || (p.sizes && p.sizes.includes(size));
-          const matchColor = !color || p.color === color;
-          return matchType && matchSize && matchColor;
-        });
+      const filtered = products.filter(p =>
+        (!type || p.category === type) &&
+        (!size || p.sizes.includes(size)) &&
+        (!color || p.color === color)
+      );
 
-        displayProducts(filtered);
-      }
+      displayProducts(filtered);
+    }
 
-      typeFilter.addEventListener("change", applyFilters);
-      sizeFilter.addEventListener("change", applyFilters);
-      colorFilter.addEventListener("change", applyFilters);
+    document.getElementById("productTypeFilter").addEventListener("change", applyFilters);
+    document.getElementById("sizeFilter").addEventListener("change", applyFilters);
+    document.getElementById("colorFilter").addEventListener("change", applyFilters);
 
-      displayProducts(products);
-    });
+    displayProducts(products);
   </script>
+
 </body>
 </html>
