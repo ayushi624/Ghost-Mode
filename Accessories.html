@@ -19,6 +19,52 @@ body {
   color: #222;
 }
 
+.top-header {
+  background: #000;
+  color: #fff;
+}
+
+body.dark-mode {
+  background-color: #222;
+  color: #ddd;
+}
+
+body.dark-mode .top-header {
+  background: #333;
+  color: #fff;
+}
+
+body.dark-mode .category-bar {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .product-grid {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode footer {
+  background-color: #111;
+}
+
+body.dark-mode .filter-block select {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+body.dark-mode .filter-block label {
+  color: #1f1f1f;
+}
+
+body.dark-mode a {
+  color: #ccc;
+}
+
+body.dark-mode a:hover {
+  color: #aaa;
+}
+
+
 a {
   text-decoration: none;
   color: inherit;
@@ -117,31 +163,29 @@ a {
 }
 
 .filter-block {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-
-.filter-block label {
-  margin-bottom: 5px;
-  font-weight: 600;
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
+  position: relative;
 }
 
 .filter-block select {
   padding: 10px 15px;
   border: 1px solid #ccc;
-  background: #fff;
-  appearance: none;
   border-radius: 6px;
   font-size: 14px;
-  transition: all 0.2s ease;
+  background-color: #fff;
   background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
-  background-position: right 10px center;
+  background-position: right 15px center;
   background-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.filter-block select:focus {
+  outline: none;
+  background-image: url("data:image/svg+xml;utf8,<svg style='transform: rotate(180deg);' fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-color: #f0f0f0;
+}
+
 
 .filter-block select:hover {
   background-color: #f0f0f0;
@@ -247,6 +291,7 @@ footer .footer-links {
       <a href="#">Contact</a>
     </nav>
   </div>
+  <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
 
   <div class="category-bar">
     <a href="#" data-category="All" class="active">All</a>
@@ -384,6 +429,19 @@ footer .footer-links {
         link.classList.add("active");
         filterProducts();
       });
+      const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  
+  // Toggle the icon between light and dark
+  if (document.body.classList.contains("dark-mode")) {
+    themeToggle.innerHTML = "🌞";  // Sun icon for light mode
+  } else {
+    themeToggle.innerHTML = "🌙";  // Moon icon for dark mode
+  }
+});
+
     });
 
     displayProducts(products);

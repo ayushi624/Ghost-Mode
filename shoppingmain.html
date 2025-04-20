@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minga London Style Page</title>
+  <link rel="stylesheet" href="shopping.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MINGA LONDON</div>
+    <nav class="nav-links">
+      <a href="#">NEW IN</a>
+      <a href="#">SHOP</a>
+      <a href="#">COLLECTIONS</a>
+      <a class="sale" href="#">SALE</a>
+    </nav>
+    <div class="icons">
+      <span>🔍</span>
+      <span>👤</span>
+      <span>❤️</span>
+      <span>🛍️</span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="title">CLOTHING</h1>
+
+    <div class="filters">
+      <button>NEW IN</button>
+      <button>TOPS & TEES</button>
+      <button>BOTTOMS</button>
+      <button>KNITWEAR</button>
+      <button>HOODIES</button>
+      <button>JACKETS</button>
+      <button>ACCESSORIES</button>
+      <button>MOST WANTED</button>
+      <button>SALE</button>
+    </div>
+
+    <div class="dropdowns">
+      <div class="dropdown">
+        <button class="dropdown-toggle">Product Type +</button>
+        <ul class="dropdown-menu">
+          <li>Tops</li>
+          <li>Hoodies</li>
+          <li>Pants</li>
+          <li>Dresses</li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-toggle">Size +</button>
+        <ul class="dropdown-menu">
+          <li>XS</li>
+          <li>S</li>
+          <li>M</li>
+          <li>L</li>
+          <li>XL</li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-toggle">Color +</button>
+        <ul class="dropdown-menu">
+          <li>Black</li>
+          <li>White</li>
+          <li>Red</li>
+          <li>Green</li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-toggle">Sort +</button>
+        <ul class="dropdown-menu">
+          <li>Newest</li>
+          <li>Price: Low to High</li>
+          <li>Price: High to Low</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="product-grid" class="product-grid"></div>
+  </main>
+
+  <script src="shopping.js"></script>
+</body>
+</html>

@@ -1,118 +1,152 @@
+// Toggle dropdowns
+document.querySelectorAll('.dropdown-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const dropdown = button.parentElement;
+    dropdown.classList.toggle('active');
+  });
+});
+
+// Example static product data (20 products)
 const products = [
   {
-    id: 1,
-    name: 'Floral Dress',
-    price: 4099,
-    image: 'images/dress1.jpg',
-    sizes: ['S', 'M', 'L'],
-    liked: false,
+    name: "Raw Washed Hoodie",
+    price: "Rs. 7,800.00",
+    sizes: ["S", "M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?hoodie&sig=1"
   },
   {
-    id: 2,
-    name: 'Denim Jacket',
-    price: 6559.18,
-    image: 'images/jacket1.jpg',
-    sizes: ['M', 'L'],
-    liked: false,
+    name: "Flame Print Pants",
+    price: "Rs. 6,500.00",
+    sizes: ["S", "M", "L"],
+    img: "https://source.unsplash.com/400x500/?pants&sig=2"
   },
   {
-    id: 3,
-    name: 'Summer Top',
-    price: 2459.18,
-    image: 'images/top1.jpg',
-    sizes: ['S', 'M'],
-    liked: false,
+    name: "Gothic Crop Top",
+    price: "Rs. 3,200.00",
+    sizes: ["XS", "S", "M"],
+    img: "https://source.unsplash.com/400x500/?top&sig=3"
   },
   {
-    id: 4,
-    name: 'Boho Skirt',
-    price: 3279.18,
-    image: 'https://us.mingalondon.com/cdn/shop/files/occult-baby-tee_4.jpg?v=1741195163.jpg',
-    sizes: ['XS', 'S', 'M'],
-    liked: false,
+    name: "Checkered Skirt",
+    price: "Rs. 4,000.00",
+    sizes: ["S", "M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?skirt&sig=4"
+  },
+  {
+    name: "Retro Jacket",
+    price: "Rs. 8,600.00",
+    sizes: ["M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?jacket&sig=5"
+  },
+  {
+    name: "Striped Knitwear",
+    price: "Rs. 5,900.00",
+    sizes: ["S", "M", "L"],
+    img: "https://source.unsplash.com/400x500/?knitwear&sig=6"
+  },
+  {
+    name: "Oversized Tee",
+    price: "Rs. 2,800.00",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    img: "https://source.unsplash.com/400x500/?tshirt&sig=7"
+  },
+  {
+    name: "Baggy Jeans",
+    price: "Rs. 7,100.00",
+    sizes: ["S", "M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?jeans&sig=8"
+  },
+  {
+    name: "Plaid Shirt",
+    price: "Rs. 3,900.00",
+    sizes: ["XS", "S", "M", "L"],
+    img: "https://source.unsplash.com/400x500/?shirt&sig=9"
+  },
+  {
+    name: "Punk Dress",
+    price: "Rs. 6,300.00",
+    sizes: ["S", "M", "L"],
+    img: "https://source.unsplash.com/400x500/?dress&sig=10"
+  },
+  {
+    name: "Fuzzy Cardigan",
+    price: "Rs. 5,200.00",
+    sizes: ["S", "M"],
+    img: "https://source.unsplash.com/400x500/?cardigan&sig=11"
+  },
+  {
+    name: "Graphic Tee",
+    price: "Rs. 2,500.00",
+    sizes: ["M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?graphic,tee&sig=12"
+  },
+  {
+    name: "Studded Belt",
+    price: "Rs. 1,700.00",
+    sizes: ["One Size"],
+    img: "https://source.unsplash.com/400x500/?belt&sig=13"
+  },
+  {
+    name: "Patchwork Hoodie",
+    price: "Rs. 7,600.00",
+    sizes: ["S", "M", "L"],
+    img: "https://source.unsplash.com/400x500/?patch,hoodie&sig=14"
+  },
+  {
+    name: "Slit Pants",
+    price: "Rs. 5,800.00",
+    sizes: ["S", "M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?trousers&sig=15"
+  },
+  {
+    name: "Cropped Vest",
+    price: "Rs. 3,100.00",
+    sizes: ["S", "M", "L"],
+    img: "https://source.unsplash.com/400x500/?vest&sig=16"
+  },
+  {
+    name: "Denim Jacket",
+    price: "Rs. 9,000.00",
+    sizes: ["M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?denim,jacket&sig=17"
+  },
+  {
+    name: "Mesh Top",
+    price: "Rs. 3,400.00",
+    sizes: ["XS", "S", "M"],
+    img: "https://source.unsplash.com/400x500/?mesh,top&sig=18"
+  },
+  {
+    name: "Bomber Jacket",
+    price: "Rs. 9,400.00",
+    sizes: ["S", "M", "L", "XL"],
+    img: "https://source.unsplash.com/400x500/?bomber,jacket&sig=19"
+  },
+  {
+    name: "Chain Necklace",
+    price: "Rs. 1,300.00",
+    sizes: ["One Size"],
+    img: "https://source.unsplash.com/400x500/?necklace&sig=20"
   }
 ];
 
-const productGrid = document.getElementById('product-grid');
-const cartCount = document.getElementById('cart-count');
-const cartModal = document.getElementById('cart-modal');
-const cartItems = document.getElementById('cart-items');
-const cartIcon = document.getElementById('cart-icon');
-const closeCart = document.getElementById('close-cart');
+// Render product cards
+const grid = document.getElementById('product-grid');
 
-let cart = [];
-
-function renderProducts() {
-  productGrid.innerHTML = '';
-  products.forEach(product => {
-    const card = document.createElement('div');
-    card.className = 'product-card';
-
-    const sizesHTML = product.sizes.map(size => `<span>${size}</span>`).join('');
-
-    card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <div class="heart ${product.liked ? 'liked' : ''}" onclick="toggleLike(${product.id})">♥</div>
-      <div class="hover-overlay">
-        <button class="add-to-bag" onclick="addToCart(${product.id})">Add to Bag</button>
-        <div class="sizes">${sizesHTML}</div>
+products.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'product-card';
+  card.innerHTML = `
+    <span class="heart">♡</span>
+    <img src="${p.img}" alt="${p.name}" />
+    <div class="product-details">
+      <div>${p.name}</div>
+      <div class="price">${p.price}</div>
+      <div class="sizes">
+        ${p.sizes.map(size => `<button>${size}</button>`).join("")}
       </div>
-      <div class="product-info">
-        <div class="product-name">${product.name}</div>
-        <div class="product-price">₹${product.price.toFixed(2)}</div>
-      </div>
-    `;
-    productGrid.appendChild(card);
-  });
-}
-
-function toggleLike(productId) {
-  const product = products.find(p => p.id === productId);
-  if (product) {
-    product.liked = !product.liked;
-    renderProducts();
-  }
-}
-
-function addToCart(productId) {
-  const product = products.find(p => p.id === productId);
-  if (product) {
-    cart.push(product);
-    updateCartCount();
-    showCart();
-  }
-}
-
-function updateCartCount() {
-  cartCount.textContent = cart.length;
-}
-
-function showCart() {
-  cartModal.style.display = 'block';
-  cartItems.innerHTML = cart.length === 0 ? '<li>Your cart is empty.</li>' : '';
-
-  let total = 0;
-  cart.forEach(item => {
-    total += item.price;
-    const li = document.createElement('li');
-    li.textContent = `${item.name} - ₹${item.price.toFixed(2)}`;
-    cartItems.appendChild(li);
-  });
-
-  if (cart.length) {
-    const totalLi = document.createElement('li');
-    totalLi.innerHTML = `<strong>Total: ₹${total.toFixed(2)}</strong>`;
-    cartItems.appendChild(totalLi);
-  }
-}
-
-cartIcon.addEventListener('click', () => {
-  cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+      <button style="margin-top: 10px; padding: 5px 10px;">ADD TO BAG</button>
+    </div>
+  `;
+  grid.appendChild(card);
 });
-closeCart.addEventListener('click', () => {
-  cartModal.style.display = 'none';
-});
-
-// Init
-renderProducts();
-updateCartCount();
