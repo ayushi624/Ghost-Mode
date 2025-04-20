@@ -102,30 +102,30 @@
       height: auto;
       border-radius: 8px;
     }
+
     .image-wrapper {
-  position: relative;
-}
+      position: relative;
+    }
 
-.image-wrapper img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
-.badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #ff5252;
-  color: white;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff5252;
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
 
     .product .name {
       font-size: 15px;
@@ -144,56 +144,28 @@
       font-weight: bold;
     }
 
-    .product {
-  text-align: center;
-  border: 1px solid #eee;
-  padding: 15px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Ensures the name, price, and button are spaced out */
-  height: 100%;
-}
+    .product .add-to-cart {
+      background-color: #ff5252;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+      align-self: center; 
+    }
 
-.product .add-to-cart {
-  background-color: #ff5252;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
-  transition: background-color 0.3s;
-  align-self: center; 
-}
+    .product .add-to-cart:hover {
+      background-color: #ff3333;
+    }
 
-.product .add-to-cart:hover {
-  background-color: #ff3333;
-}
-
-.product:hover {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transform: translateY(-4px);
-  transition: 0.3s ease;
-}
-
-.badge {
-  position: absolute;
-  background: red;
-  color: white;
-  font-size: 12px;
-  padding: 4px 8px;
-  top: 10px;
-  left: 10px;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-.product {
-  position: relative;
-}
-
+    .product:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+      transition: 0.3s ease;
+    }
 
     footer {
       background: #000;
@@ -257,7 +229,6 @@
     </select>
   </div>
   
-
   <div class="product-grid" id="productGrid"></div>
 
   <footer>© 2025 Ghost Mode. All rights reserved.</footer>
@@ -375,11 +346,16 @@
         }
       ];
 
-
       const productGrid = document.getElementById("productGrid");
       const typeFilter = document.getElementById("typeFilter");
       const sizeFilter = document.getElementById("sizeFilter");
       const colorFilter = document.getElementById("colorFilter");
+
+      function calculateDiscount(originalPrice, salePrice) {
+        const original = parseFloat(originalPrice.replace('₹', '').replace(',', ''));
+        const sale = parseFloat(salePrice.replace('₹', '').replace(',', ''));
+        return Math.round(((original - sale) / original) * 100);
+      }
 
       function displayProducts(filtered) {
         productGrid.innerHTML = "";
@@ -389,18 +365,19 @@
         }
 
         filtered.forEach(p => {
+          const discount = calculateDiscount(p.originalPrice, p.salePrice);
           const product = document.createElement("div");
           product.className = "product";
           product.innerHTML = `
-  <div class="image-wrapper">
-    <img src="${p.img}" alt="${p.name}">
-    <div class="badge">SALE</div>
-  </div>
-  <p class="name">${p.name}</p>
-  <p class="price">${p.originalPrice}</p>
-  <p class="sale-price">${p.salePrice}</p>
-  <button class="add-to-cart" onclick="addToCart('${p.name}')">Add to Cart</button>
-`;
+            <div class="image-wrapper">
+              <img src="${p.img}" alt="${p.name}">
+              <div class="badge">${discount}% OFF</div>
+            </div>
+            <p class="name">${p.name}</p>
+            <p class="price">${p.originalPrice}</p>
+            <p class="sale-price">${p.salePrice}</p>
+            <button class="add-to-cart" onclick="addToCart('${p.name}')">Add to Cart</button>
+          `;
           productGrid.appendChild(product);
         });
       }
