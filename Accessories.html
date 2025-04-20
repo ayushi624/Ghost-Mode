@@ -19,6 +19,52 @@ body {
   color: #222;
 }
 
+.top-header {
+  background: #000;
+  color: #fff;
+}
+
+body.dark-mode {
+  background-color: #222;
+  color: #ddd;
+}
+
+body.dark-mode .top-header {
+  background: #333;
+  color: #fff;
+}
+
+body.dark-mode .category-bar {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .product-grid {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode footer {
+  background-color: #111;
+}
+
+body.dark-mode .filter-block select {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+body.dark-mode .filter-block label {
+  color: #1f1f1f;
+}
+
+body.dark-mode a {
+  color: #ccc;
+}
+
+body.dark-mode a:hover {
+  color: #aaa;
+}
+
+
 a {
   text-decoration: none;
   color: inherit;
@@ -245,6 +291,7 @@ footer .footer-links {
       <a href="#">Contact</a>
     </nav>
   </div>
+  <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
 
   <div class="category-bar">
     <a href="#" data-category="All" class="active">All</a>
@@ -382,6 +429,19 @@ footer .footer-links {
         link.classList.add("active");
         filterProducts();
       });
+      const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  
+  // Toggle the icon between light and dark
+  if (document.body.classList.contains("dark-mode")) {
+    themeToggle.innerHTML = "🌞";  // Sun icon for light mode
+  } else {
+    themeToggle.innerHTML = "🌙";  // Moon icon for dark mode
+  }
+});
+
     });
 
     displayProducts(products);
