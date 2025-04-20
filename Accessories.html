@@ -117,31 +117,29 @@ a {
 }
 
 .filter-block {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-
-.filter-block label {
-  margin-bottom: 5px;
-  font-weight: 600;
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
+  position: relative;
 }
 
 .filter-block select {
   padding: 10px 15px;
   border: 1px solid #ccc;
-  background: #fff;
-  appearance: none;
   border-radius: 6px;
   font-size: 14px;
-  transition: all 0.2s ease;
+  background-color: #fff;
   background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
-  background-position: right 10px center;
+  background-position: right 15px center;
   background-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
+.filter-block select:focus {
+  outline: none;
+  background-image: url("data:image/svg+xml;utf8,<svg style='transform: rotate(180deg);' fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-color: #f0f0f0;
+}
+
 
 .filter-block select:hover {
   background-color: #f0f0f0;
