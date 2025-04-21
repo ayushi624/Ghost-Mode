@@ -1,4 +1,295 @@
-// Toggle dropdowns
+const productGrid = document.getElementById("product-grid");
+const cart = [];
+const cartPanel = document.getElementById("cartPanel");
+const cartItemsEl = document.getElementById("cartItems");
+
+const products = [
+{
+  title: "Occult Baby Tee",
+  price: "₹3,700.00",
+  priceValue: 3700,
+  image: "https://us.mingalondon.com/cdn/shop/files/occult-baby-tee_2_540x.jpg?v=1742402582",
+  type: "Tops",
+  color: "White",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Raw Washed Hoodie",
+  price: "₹7,800.00",
+  priceValue: 7800,
+  image: "https://us.mingalondon.com/cdn/shop/files/raw-wash-hoodie_3_540x.jpg?v=1742402347",
+  type: "Hoodies",
+  color: "Black",
+  sizes: ["S", "M", "L", "XL"]
+},
+{
+  title: "Raw Washed Sweatpants",
+  price: "₹7,800.00",
+  priceValue: 7800,
+  image: "https://us.mingalondon.com/cdn/shop/files/raw-wash-sweatpants_3_540x.jpg?v=1742402367",
+  type: "Pants",
+  color: "Black",
+  sizes: ["S", "M", "L", "XL"]
+},
+{
+  title: "Mia Black Zip Up Hoodie",
+  price: "₹10,100.00",
+  priceValue: 10100,
+  image: "https://us.mingalondon.com/cdn/shop/files/Mia-black-zip-up-hoodie-minga3.jpg?v=1738853190",
+  type: "Hoodies",
+  color: "Black",
+  sizes: ["S", "M", "XL"]
+},
+{
+  title: "Savage Denim Hot Pants",
+  price: "₹6,100.00",
+  priceValue: 6100,
+  image: "https://us.mingalondon.com/cdn/shop/files/savage-denim-hot-pants_3.jpg?v=1744908247",
+  type: "Pants",
+  color: "Green",
+  sizes: ["M", "L", "XL"]
+},
+{
+  title: "Mia Pink Zip Up Hoodie",
+  price: "₹10,100.00",
+  priceValue: 10100,
+  image: "https://us.mingalondon.com/cdn/shop/files/Purrfection-zip-up-hoodie1.jpg?v=1738853250",
+  type: "Hoodies",
+  color: "Purple",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Purrfection Zip Up Hoodie",
+  price: "₹7,800.00",
+  priceValue: 7800,
+  image: "https://us.mingalondon.com/cdn/shop/files/Purrfection-zip-up-hoodie1_ee5d42de-9576-4021-8a33-13ab4d65f8ce.jpg?v=1738853318",
+  type: "Hoodies",
+  color: "Black",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Iron Washed Zip Up Hoodie",
+  price: "₹8,700.00",
+  priceValue: 8700,
+  image: "https://us.mingalondon.com/cdn/shop/files/iron-grey-wash-zip-up-hoodie_1.jpg?v=1742402454",
+  type: "Hoodies",
+  color: "Grey",
+  sizes: ["M", "L", "XL"]
+},
+{
+  title: "Thorn Black Sweater",
+  price: "₹7,800.00",
+  priceValue: 7800,
+  image: "https://us.mingalondon.com/cdn/shop/files/thorns-black-knit-sweater_5.jpg?v=1741195199",
+  type: "Knitwear",
+  color: "Black",
+  sizes: ["S", "M", "L", "XL"]
+},
+{
+  title: "Crush Black Baggy Flare Jeans",
+  price: "₹10,100.00",
+  priceValue: 10100,
+  image: "https://us.mingalondon.com/cdn/shop/files/crush-black-baggy-flare-jeans_3.jpg?v=1741195066",
+  type: "Jeans",
+  color: "Black",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Lex Black Washed Sweat Shorts",
+  price: "₹7,000.00",
+  priceValue: 7000,
+  image: "https://us.mingalondon.com/cdn/shop/files/lex-black-washed-sweat-shorts_1.jpg?v=1742987429",
+  type: "Jeans",
+  color: "Black",
+  sizes: ["One Size"]
+},
+{
+  title: "Venom Zip Hoodie",
+  price: "₹8,700.00",
+  priceValue: 8700,
+  image: "https://us.mingalondon.com/cdn/shop/files/Venom_Zip_Up_Hoodie1.jpg?v=1743603747",
+  type: "Hoodies",
+  color: "Black",
+  sizes: ["S","M","L"]
+},
+{
+  title: "Guardian Angel Baby Tee",
+  price: "₹3,700.00",
+  priceValue: 3700,
+  image: "https://us.mingalondon.com/cdn/shop/files/guardian-angel-cross-white-baby-tee_1.jpg?v=1744901201",
+  type: "Tops",
+  color: "White",
+  sizes: ["S", "M"]
+},
+{
+  title: "Kiara Baby Tee",
+  price: "₹4,800.00",
+  priceValue: 4800,
+  image: "https://us.mingalondon.com/cdn/shop/files/Kiara_Baby_Tee2.jpg?v=1743603822",
+  type: "Tops",
+  color: "White",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Dystopian Vest Top",
+  price: "₹3,700.00",
+  priceValue: 3700,
+  image: "https://us.mingalondon.com/cdn/shop/files/Dystopian_Vest_Top1.jpg?v=1743603910",
+  type: "Tops",
+  color: "White",
+  sizes: ["M", "L"]
+},
+{
+  title: "Lex Grey Washed Sweat Shorts",
+  price: "₹7,000.00",
+  priceValue: 7000,
+  image: "https://us.mingalondon.com/cdn/shop/files/lloyd-wash-sweat-shorts_1.jpg?v=1742402478",
+  type: "Jeans",
+  color: "Grey",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Storm Knitted Zip-Up Hoodie",
+  price: "₹8,700.00",
+  priceValue: 8700,
+  image: "https://us.mingalondon.com/cdn/shop/files/storm-knitted-zip-up-hoodie-cardigan_1.jpg?v=1742402394",
+  type: "Hoodies",
+  color: "Black",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Grime Baby Tee",
+  price: "₹4,200.00",
+  priceValue: 4200,
+  image: "https://us.mingalondon.com/cdn/shop/files/grime-baby-tee_4.jpg?v=1744901142",
+  type: "Tops",
+  color: "Black",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Insane Zip Up Hoodie",
+  price: "₹7,800.00",
+  priceValue: 7800,
+  image: "https://us.mingalondon.com/cdn/shop/files/insane-zip-up-hoodie_4.jpg?v=1741195145",
+  type: "Hoodies",
+  color: "Black",
+  sizes: ["S", "M", "L", "XL"]
+},
+{
+  title: "Viber Tube Top",
+  price: "₹3,700.00",
+  priceValue: 3700,
+  image: "https://us.mingalondon.com/cdn/shop/files/Viper_Tube_Top4.jpg?v=1743609637",
+  type: "Tops",
+  color: "Black",
+  sizes: ["M", "L"]
+}
+];
+
+
+let selectedType = null;
+let selectedColor = null;
+let selectedSize = null;
+let selectedSort = null;
+
+function renderProducts() {
+  productGrid.innerHTML = "";
+
+  let filtered = products.filter(p => {
+    const typeMatch = !selectedType || p.type === selectedType;
+    const colorMatch = !selectedColor || p.color === selectedColor;
+    const sizeMatch = !selectedSize || p.sizes.includes(selectedSize);
+    return typeMatch && colorMatch && sizeMatch;
+  });
+
+  if (selectedSort === "Price: Low to High") {
+    filtered.sort((a, b) => a.priceValue - b.priceValue);
+  } else if (selectedSort === "Price: High to Low") {
+    filtered.sort((a, b) => b.priceValue - a.priceValue);
+  }
+
+  filtered.forEach(p => {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+    card.innerHTML = `
+      <div class="product-image">
+        <img src="${p.image}" alt="${p.title}" />
+      </div>
+      <div class="heart">♡</div>
+      <div class="overlay">
+        <button class="add-to-bag">ADD TO BAG</button>
+        <div class="sizes">
+          ${p.sizes.map(s => `<button>${s}</button>`).join("")}
+        </div>
+      </div>
+      <div class="product-info">
+        <p class="product-title">${p.title}</p>
+        <p class="product-price">${p.price}</p>
+      </div>
+    `;
+
+    card.querySelector(".add-to-bag").addEventListener("click", () => {
+      const selectedSizeBtn = card.querySelector(".sizes .selected");
+      if (!selectedSizeBtn) {
+        alert("Please select a size!");
+      } else {
+        const item = {
+          title: p.title,
+          price: p.price,
+          size: selectedSizeBtn.textContent,
+          image: p.image
+        };
+        cart.push(item);
+        updateCart();
+        cartPanel.classList.add("active");
+      }
+    });
+
+    card.querySelectorAll(".sizes button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        card.querySelectorAll(".sizes button").forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+      });
+    });
+
+    productGrid.appendChild(card);
+  });
+}
+
+function updateCart() {
+  cartItemsEl.innerHTML = "";
+  cart.forEach((item, index) => {
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart-item";
+    cartItem.innerHTML = `
+      <img src="${item.image}" />
+      <div class="cart-item-details">
+        <div>${item.title}</div>
+        <div>Size: ${item.size}</div>
+        <div>${item.price}</div>
+      </div>
+      <div class="remove-btn" data-index="${index}">✖</div>
+    `;
+    cartItemsEl.appendChild(cartItem);
+  });
+
+  document.querySelectorAll(".remove-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const index = btn.getAttribute("data-index");
+      cart.splice(index, 1);
+      updateCart();
+    });
+  });
+}
+
+document.getElementById("cart-icon").addEventListener("click", () => {
+  cartPanel.classList.toggle("active");
+});
+
+document.getElementById("closeCart").addEventListener("click", () => {
+  cartPanel.classList.remove("active");
+});
+
 document.querySelectorAll('.dropdown-toggle').forEach(button => {
   button.addEventListener('click', () => {
     const dropdown = button.parentElement;
@@ -6,147 +297,22 @@ document.querySelectorAll('.dropdown-toggle').forEach(button => {
   });
 });
 
-// Example static product data (20 products)
-const products = [
-  {
-    name: "Raw Washed Hoodie",
-    price: "Rs. 7,800.00",
-    sizes: ["S", "M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?hoodie&sig=1"
-  },
-  {
-    name: "Flame Print Pants",
-    price: "Rs. 6,500.00",
-    sizes: ["S", "M", "L"],
-    img: "https://source.unsplash.com/400x500/?pants&sig=2"
-  },
-  {
-    name: "Gothic Crop Top",
-    price: "Rs. 3,200.00",
-    sizes: ["XS", "S", "M"],
-    img: "https://source.unsplash.com/400x500/?top&sig=3"
-  },
-  {
-    name: "Checkered Skirt",
-    price: "Rs. 4,000.00",
-    sizes: ["S", "M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?skirt&sig=4"
-  },
-  {
-    name: "Retro Jacket",
-    price: "Rs. 8,600.00",
-    sizes: ["M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?jacket&sig=5"
-  },
-  {
-    name: "Striped Knitwear",
-    price: "Rs. 5,900.00",
-    sizes: ["S", "M", "L"],
-    img: "https://source.unsplash.com/400x500/?knitwear&sig=6"
-  },
-  {
-    name: "Oversized Tee",
-    price: "Rs. 2,800.00",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    img: "https://source.unsplash.com/400x500/?tshirt&sig=7"
-  },
-  {
-    name: "Baggy Jeans",
-    price: "Rs. 7,100.00",
-    sizes: ["S", "M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?jeans&sig=8"
-  },
-  {
-    name: "Plaid Shirt",
-    price: "Rs. 3,900.00",
-    sizes: ["XS", "S", "M", "L"],
-    img: "https://source.unsplash.com/400x500/?shirt&sig=9"
-  },
-  {
-    name: "Punk Dress",
-    price: "Rs. 6,300.00",
-    sizes: ["S", "M", "L"],
-    img: "https://source.unsplash.com/400x500/?dress&sig=10"
-  },
-  {
-    name: "Fuzzy Cardigan",
-    price: "Rs. 5,200.00",
-    sizes: ["S", "M"],
-    img: "https://source.unsplash.com/400x500/?cardigan&sig=11"
-  },
-  {
-    name: "Graphic Tee",
-    price: "Rs. 2,500.00",
-    sizes: ["M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?graphic,tee&sig=12"
-  },
-  {
-    name: "Studded Belt",
-    price: "Rs. 1,700.00",
-    sizes: ["One Size"],
-    img: "https://source.unsplash.com/400x500/?belt&sig=13"
-  },
-  {
-    name: "Patchwork Hoodie",
-    price: "Rs. 7,600.00",
-    sizes: ["S", "M", "L"],
-    img: "https://source.unsplash.com/400x500/?patch,hoodie&sig=14"
-  },
-  {
-    name: "Slit Pants",
-    price: "Rs. 5,800.00",
-    sizes: ["S", "M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?trousers&sig=15"
-  },
-  {
-    name: "Cropped Vest",
-    price: "Rs. 3,100.00",
-    sizes: ["S", "M", "L"],
-    img: "https://source.unsplash.com/400x500/?vest&sig=16"
-  },
-  {
-    name: "Denim Jacket",
-    price: "Rs. 9,000.00",
-    sizes: ["M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?denim,jacket&sig=17"
-  },
-  {
-    name: "Mesh Top",
-    price: "Rs. 3,400.00",
-    sizes: ["XS", "S", "M"],
-    img: "https://source.unsplash.com/400x500/?mesh,top&sig=18"
-  },
-  {
-    name: "Bomber Jacket",
-    price: "Rs. 9,400.00",
-    sizes: ["S", "M", "L", "XL"],
-    img: "https://source.unsplash.com/400x500/?bomber,jacket&sig=19"
-  },
-  {
-    name: "Chain Necklace",
-    price: "Rs. 1,300.00",
-    sizes: ["One Size"],
-    img: "https://source.unsplash.com/400x500/?necklace&sig=20"
-  }
-];
+document.querySelectorAll('.dropdown-menu li').forEach(li => {
+  li.addEventListener("click", () => {
+    const label = li.textContent.trim();
 
-// Render product cards
-const grid = document.getElementById('product-grid');
+    if (["Tops", "Hoodies", "Pants", "Dresses"].includes(label)) {
+      selectedType = label;
+    } else if (["Black", "White", "Red", "Green"].includes(label)) {
+      selectedColor = label;
+    } else if (["XS", "S", "M", "L", "XL"].includes(label)) {
+      selectedSize = label;
+    } else if (["Newest", "Price: Low to High", "Price: High to Low"].includes(label)) {
+      selectedSort = label;
+    }
 
-products.forEach(p => {
-  const card = document.createElement('div');
-  card.className = 'product-card';
-  card.innerHTML = `
-    <span class="heart">♡</span>
-    <img src="${p.img}" alt="${p.name}" />
-    <div class="product-details">
-      <div>${p.name}</div>
-      <div class="price">${p.price}</div>
-      <div class="sizes">
-        ${p.sizes.map(size => `<button>${size}</button>`).join("")}
-      </div>
-      <button style="margin-top: 10px; padding: 5px 10px;">ADD TO BAG</button>
-    </div>
-  `;
-  grid.appendChild(card);
+    renderProducts();
+  });
 });
+
+renderProducts();
