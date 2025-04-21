@@ -262,6 +262,7 @@
       <option value="Blue">Blue</option>
       <option value="Purple">Purple</option>
       <option value="Brown">Brown</option>
+      <option value="Grey">Grey</option>
     </select>
     <select id="priceSort">
       <option value="">Sort by Price</option>
@@ -372,7 +373,7 @@
           name: "Nyx Furry Crossbody Bag",
           category: "Bags",
           sizes: ["L"],
-          color: "Black",
+          color: "Grey",
           originalPrice: "₹1,099",
           salePrice: "₹799"
         },
@@ -405,7 +406,6 @@
           productGrid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center;">No sale products found.</p>`;
           return;
         }
-
         filtered.forEach(p => {
           const discount = calculateDiscount(p.originalPrice, p.salePrice);
           const product = document.createElement("div");
@@ -454,10 +454,8 @@
       function addToCart(productName) {
         alert(`Added ${productName} to the cart!`);
       }
-
       displayProducts(products);
     });
-
     document.getElementById("themeToggle").addEventListener("click", function () {
       document.body.classList.toggle("dark-mode");
     });
