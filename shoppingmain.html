@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Minga London Style Page</title>
-  <link rel="stylesheet" href="shopping.css" />
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">MINGA LONDON</div>
+    <div class="logo">Ghost Mode</div>
     <nav class="nav-links">
       <a href="#">NEW IN</a>
       <a href="#">SHOP</a>
@@ -19,7 +18,7 @@
       <span>🔍</span>
       <span>👤</span>
       <span>❤️</span>
-      <span>🛍️</span>
+      <span id="cart-icon">🛍️</span>
     </div>
   </header>
 
@@ -80,6 +79,13 @@
     <div id="product-grid" class="product-grid"></div>
   </main>
 
-  <script src="shopping.js"></script>
+  <!-- Sliding cart panel -->
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+      <span>Your Bag</span>
+      <span id="closeCart" style="cursor:pointer;">✖</span>
+    </div>
+    <div id="cartItems"></div>
+  </div>
 </body>
 </html>
