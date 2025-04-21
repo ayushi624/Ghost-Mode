@@ -333,6 +333,7 @@ body {
   padding: 30px 10% 20px;
   background-color: black;
   color: white;
+  margin-top: 50px;
 }
 
 .footer-columns {
@@ -458,3 +459,6 @@ body {
   letter-spacing: 0.5px;
 }
   
+ul li a {
+  text-decoration: none;
+}
