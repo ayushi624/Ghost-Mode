@@ -7,11 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #fff;
-      color: #000;
-    }
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #000;
+  color: #eee; 
+}
+
 
     header {
       background: #000;
@@ -234,9 +235,6 @@
         <a href="#">Collections</a>
         <a href="#" style="color: #ff5252;">Sale</a>
       </nav>
-      <button id="themeToggle" style="background: none; border: 1px solid white; color: white; padding: 6px 10px; border-radius: 4px; cursor: pointer;">
-        Toggle Mode
-      </button>
     </div>
   </header>
 
@@ -262,6 +260,7 @@
       <option value="Blue">Blue</option>
       <option value="Purple">Purple</option>
       <option value="Brown">Brown</option>
+      <option value="Grey">Grey</option>
     </select>
     <select id="priceSort">
       <option value="">Sort by Price</option>
@@ -372,7 +371,7 @@
           name: "Nyx Furry Crossbody Bag",
           category: "Bags",
           sizes: ["L"],
-          color: "Black",
+          color: "Grey",
           originalPrice: "₹1,099",
           salePrice: "₹799"
         },
@@ -405,7 +404,6 @@
           productGrid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center;">No sale products found.</p>`;
           return;
         }
-
         filtered.forEach(p => {
           const discount = calculateDiscount(p.originalPrice, p.salePrice);
           const product = document.createElement("div");
@@ -454,12 +452,7 @@
       function addToCart(productName) {
         alert(`Added ${productName} to the cart!`);
       }
-
       displayProducts(products);
-    });
-
-    document.getElementById("themeToggle").addEventListener("click", function () {
-      document.body.classList.toggle("dark-mode");
     });
   </script>
 </body>
