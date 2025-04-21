@@ -5,13 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GHOST MODE - Collections</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: #fff;
       color: #111;
+      transition: background-color 0.3s, color 0.3s;
     }
+
+    /* Dark mode styling */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
     header {
       background-color: #000;
       color: #fff;
@@ -20,6 +29,7 @@
       justify-content: space-between;
       align-items: center;
     }
+
     header strong {
       font-size: 24px;
       letter-spacing: 1px;
@@ -32,24 +42,34 @@
       font-weight: 600;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: #ff5252;
     }
+
+    /* Dark mode styles for collections */
     .collections {
       padding: 60px 40px;
       background-color: #f9f9f9;
       text-align: center;
     }
+
+    body.dark-mode .collections {
+      background-color: #1f1f1f;
+    }
+
     .collections h2 {
       font-size: 32px;
       font-weight: 800;
       margin-bottom: 30px;
     }
+
     .collection-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
+
     .collection {
       background: #fff;
       border-radius: 12px;
@@ -57,19 +77,29 @@
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    body.dark-mode .collection {
+      background: #333;
+      box-shadow: 0 6px 20px rgba(255,255,255,0.1);
+    }
+
     .collection:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
+
     .collection img {
       width: 100%;
       height: 300px;
       object-fit: cover;
     }
+
     .collection h3 {
       margin: 15px;
       font-size: 18px;
+      font-weight: 600;
     }
+
     .collection a {
       display: inline-block;
       margin-bottom: 20px;
@@ -79,9 +109,15 @@
       border-bottom: 2px solid transparent;
       transition: all 0.3s ease;
     }
+
+    body.dark-mode .collection a {
+      color: #fff;
+    }
+
     .collection a:hover {
       border-color: #000;
     }
+
     footer {
       background: #111;
       color: #fff;
@@ -90,11 +126,13 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 40px;
     }
+
     footer h4 {
       margin-bottom: 15px;
       font-size: 16px;
       font-weight: 600;
     }
+
     footer a {
       color: #ccc;
       text-decoration: none;
@@ -103,9 +141,11 @@
       font-size: 14px;
       transition: color 0.3s ease;
     }
+
     footer a:hover {
       color: #fff;
     }
+
     .footer-bottom {
       text-align: center;
       background-color: #000;
@@ -113,119 +153,134 @@
       padding: 15px;
       font-size: 13px;
     }
+
     .footer-bottom a {
       color: #bbb;
       margin: 0 10px;
       text-decoration: none;
     }
+
     .footer-bottom a:hover {
       color: #fff;
     }
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      nav {
-        margin-top: 10px;
-      }
-      .collections {
-        padding: 40px 20px;
-      }
+
+    /* Dark Mode Toggle Icon */
+    .dark-mode-toggle {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      transition: color 0.3s ease;
     }
+
+    .dark-mode-toggle:hover {
+      color: #ff5252;
+    }
+
   </style>
 </head>
 <body>
-<header>
-  <strong>GHOST MODE</strong>
-  <nav>
-    <a href="#">NEW IN</a>
-    <a href="#">SHOP</a>
-    <a href="#">COLLECTIONS</a>
-    <a href="#" style="color: #ff5252;">SALE</a>
-  </nav>
-</header>
 
-<section class="collections">
-  <h2>Explore Our Collections</h2>
-  <div class="collection-grid">
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/capa_colecao.jpg?v=1743516983" alt="Chrome Angels">
-      <h3>CHROME ANGELS</h3>
-      <a href="chrome-angels.html">VIEW COLLECTION</a>
-    </div>
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/menu.jpg?v=1742311213" alt="Disconnect">
-      <h3>DISCONNECT</h3>
-      <a href="disconnect.html">VIEW COLLECTION</a>
-    </div>
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/capa_menu.jpg?v=1741003788" alt="Trash Cult">
-      <h3>TRASH CULT</h3>
-      <a href="trash-cult.html">VIEW COLLECTION</a>
-    </div>
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/not_your_doll.jpg?v=1738672150" alt="Not Your Doll">
-      <h3>NOT YOUR DOLL</h3>
-      <a href="not-your-doll.html">VIEW COLLECTION</a>
-    </div>
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/dark-wash-2.jpg?v=1737732710" alt="Dark Wash">
-      <h3>DARK WASH</h3>
-      <a href="dark-wash.html">VIEW COLLECTION</a>
-    </div>
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/soft-lounge--new-mobile.webp?v=1736437821" alt="Soft Lounge">
-      <h3>SOFT LOUNGE</h3>
-      <a href="soft-lounge.html">VIEW COLLECTION</a>
-    </div>
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/newnewnnew.webp?v=1736437862" alt="Dark Echo">
-      <h3>DARK ECHO</h3>
-      <a href="dark-echo.html">VIEW COLLECTION</a>
-    </div>
-    <div class="collection">
-      <img src="https://us.mingalondon.com/cdn/shop/collections/mob_4.webp?v=1736437906" alt="Abstrakt">
-      <h3>ABSTRAKT</h3>
-      <a href="abstrakt.html">VIEW COLLECTION</a>
-    </div>
-  </div>
-</section>
+  <header>
+    <strong>GHOST MODE</strong>
+    <nav>
+      <a href="#">NEW IN</a>
+      <a href="#">SHOP</a>
+      <a href="#">COLLECTIONS</a>
+      <a href="#" style="color: #ff5252;">SALE</a>
+    </nav>
+    <!-- Dark Mode Toggle Icon -->
+    <i class="fas fa-sun dark-mode-toggle" id="darkModeToggle"></i>
+  </header>
 
-<footer>
-  <div>
-    <h4>MY ACCOUNT</h4>
-    <a href="#">Track My Order</a>
-    <a href="#">Order History</a>
-    <a href="#">Start a Return</a>
-    <a href="#">Wishlist</a>
-  </div>
-  <div>
-    <h4>HELP</h4>
-    <a href="#">FAQs</a>
-    <a href="#">Shipping</a>
-    <a href="#">Returns</a>
-    <a href="#">Size Guide</a>
-    <a href="#">Contact Us</a>
-  </div>
-  <div>
-    <h4>ABOUT US</h4>
-    <a href="#">About Us</a>
-    <a href="#">Brand Responsibility</a>
-    <a href="#">Mingazine</a>
-  </div>
-  <div>
-    <h4>FOR YOU</h4>
-    <a href="#">Student Discount</a>
-    <a href="#">Gift Cards</a>
-    <a href="#">Afterpay</a>
-    <a href="#">Klarna</a>
-  </div>
-</footer>
+  <section class="collections">
+    <h2>Explore Our Collections</h2>
+    <div class="collection-grid">
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/capa_colecao.jpg?v=1743516983" alt="Chrome Angels">
+        <h3>CHROME ANGELS</h3>
+        <a href="chrome-angels.html">VIEW COLLECTION</a>
+      </div>
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/menu.jpg?v=1742311213" alt="Disconnect">
+        <h3>DISCONNECT</h3>
+        <a href="disconnect.html">VIEW COLLECTION</a>
+      </div>
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/capa_menu.jpg?v=1741003788" alt="Trash Cult">
+        <h3>TRASH CULT</h3>
+        <a href="trash-cult.html">VIEW COLLECTION</a>
+      </div>
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/not_your_doll.jpg?v=1738672150" alt="Not Your Doll">
+        <h3>NOT YOUR DOLL</h3>
+        <a href="not-your-doll.html">VIEW COLLECTION</a>
+      </div>
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/dark-wash-2.jpg?v=1737732710" alt="Dark Wash">
+        <h3>DARK WASH</h3>
+        <a href="dark-wash.html">VIEW COLLECTION</a>
+      </div>
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/soft-lounge--new-mobile.webp?v=1736437821" alt="Soft Lounge">
+        <h3>SOFT LOUNGE</h3>
+        <a href="soft-lounge.html">VIEW COLLECTION</a>
+      </div>
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/newnewnnew.webp?v=1736437862" alt="Dark Echo">
+        <h3>DARK ECHO</h3>
+        <a href="dark-echo.html">VIEW COLLECTION</a>
+      </div>
+      <div class="collection">
+        <img src="https://us.mingalondon.com/cdn/shop/collections/mob_4.webp?v=1736437906" alt="Abstrakt">
+        <h3>ABSTRAKT</h3>
+        <a href="abstrakt.html">VIEW COLLECTION</a>
+      </div>
+    </div>
+  </section>
 
-<div class="footer-bottom">
-  COPYRIGHT © 2025 GHOST MODE | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
-</div>
+  <footer>
+    <div>
+      <h4>MY ACCOUNT</h4>
+      <a href="#">Track My Order</a>
+      <a href="#">Order History</a>
+      <a href="#">Start a Return</a>
+      <a href="#">Wishlist</a>
+    </div>
+    <div>
+      <h4>HELP</h4>
+      <a href="#">FAQs</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Size Guide</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div>
+      <h4>ABOUT US</h4>
+      <a href="#">About Us</a>
+      <a href="#">Brand Responsibility</a>
+      <a href="#">Mingazine</a>
+    </div>
+    <div>
+      <h4>FOR YOU</h4>
+      <a href="#">Student Discount</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Afterpay</a>
+      <a href="#">Klarna</a>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    COPYRIGHT © 2025 GHOST MODE | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.classList.toggle('fa-sun');
+      toggle.classList.toggle('fa-moon');
+    });
+  </script>
 
 </body>
 </html>
