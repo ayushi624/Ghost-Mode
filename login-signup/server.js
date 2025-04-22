@@ -1,12 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const fs = require('fs');
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+
+// ✅ This should be correct if your HTML is in login-signup/public
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'secret-key',
   resave: false,
