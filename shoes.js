@@ -1,20 +1,20 @@
 const products = [
   {
-    img: "https://us.mingalondon.com/cdn/shop/files/Gig_Leopard_Creeper_Shoes2_c8d64c7d-6eb6-4a82-9a17-895d6c997d3d_720x.jpg?v=1721231306",
+    img: "https://us.mingalondon.com/cdn/shop/files/7E663159-A6E4-4458-A111-F6F225B70A3B_900x.jpg?v=1726323459",
     category: "Gig Leopard Creeper Shoes",
     size: "S",
     color: "Black",
     price: "₹1,200"
   },
   {
-    img: "https://us.mingalondon.com/cdn/shop/files/Gig_Leopard_Creeper_Shoes3_120x.jpg?v=1721231304",
+    img: "https://us.mingalondon.com/cdn/shop/files/Gig_Leopard_Creeper_Shoes1_900x.jpg?v=1721231304",
     category: "Mystic Mary Janes",
     size: "S",
     color: "Black",
     price: "₹1,250"
   },
   {
-    img: "https://us.mingalondon.com/cdn/shop/files/minga-london-lana-mary-janes-2_120x.jpg?v=1715508410",
+    img: "https://us.mingalondon.com/cdn/shop/files/minga-london-lana-mary-janes-2_900x.jpg?v=1715508410",
     category: "Lana Mary-Janes",
     size: "M",
     color: "Black",
