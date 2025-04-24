@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minga London Style Page</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Ghost Mode</div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#">NEW IN</a>
+      <a href="#">SHOP</a>
+      <a href="#">COLLECTIONS</a>
+      <a class="sale" href="#">SALE</a>
+    </nav>
+    <div class="icons">
+      <span>🔍</span>
+      <span>👤</span>
+      <span>❤️</span>
+      <span id="cart-icon">🛍️<span class="cart-count">0</span></span>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="title">CLOTHING</h1>
+
+    <div class="filters">
+      <button>NEW IN</button>
+      <button>TOPS & TEES</button>
+      <button>BOTTOMS</button>
+      <button>KNITWEAR</button>
+      <button>HOODIES</button>
+      <button>JACKETS</button>
+      <button>ACCESSORIES</button>
+      <button>MOST WANTED</button>
+      <button>SALE</button>
+    </div>
+
+  <div class="dropdowns">
+      <div class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="productTypeMenu">Product Type +</button>
+        <ul id="productTypeMenu" class="dropdown-menu">
+          <li>Tops</li>
+          <li>Hoodies</li>
+          <li>Pants</li>
+          <li>Dresses</li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="sizeMenu">Size +</button>
+        <ul id="sizeMenu" class="dropdown-menu">
+          <li>XS</li>
+          <li>S</li>
+          <li>M</li>
+          <li>L</li>
+          <li>XL</li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="colorMenu">Color +</button>
+        <ul id="colorMenu" class="dropdown-menu">
+          <li>Black</li>
+          <li>White</li>
+          <li>Red</li>
+          <li>Green</li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="sortMenu">Sort +</button>
+        <ul id="sortMenu" class="dropdown-menu">
+          <li>Newest</li>
+          <li>Price: Low to High</li>
+          <li>Price: High to Low</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="product-grid" class="product-grid"></div>
+  </main>
+
+  <!-- Sliding cart panel -->
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-header">
+      <span>Your Bag</span>
+      <span id="closeCart" style="cursor:pointer;">✖</span>
+    </div>
+    <div id="cartItems"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
