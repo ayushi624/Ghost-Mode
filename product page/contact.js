@@ -74,35 +74,3 @@ function showStatusMessage(message, type) {
     statusMsg.style.display = "none";
   }, 5000);
 }
-
-// Initialize theme based on saved preference or system preference
-function initializeTheme() {
-  // Check for user preference
-  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  // Load saved theme or use system preference
-  const savedTheme = localStorage.getItem('theme') || (prefersDarkMode ? 'dark' : 'light');
-  
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
-  
-  // Update theme toggle button text if it exists
-  updateThemeText();
-}
-
-// Toggle between light and dark mode
-function toggleTheme() {
-  const isDarkMode = document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  updateThemeText();
-}
-
-// Update theme toggle button text
-function updateThemeText() {
-  const themeToggleBtn = document.getElementById('themeToggle');
-  if (themeToggleBtn) {
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    themeToggleBtn.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
-  }
-}

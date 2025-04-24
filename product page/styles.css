@@ -29,26 +29,6 @@ a {
   padding: 0 16px;
 }
 
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-}
-
-.dark-mode-toggle button {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 /* Breadcrumbs */
 .breadcrumbs {
   padding: 16px 0;
@@ -534,7 +514,7 @@ a {
   max-width: 460px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid white;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .newsletter-form input {
