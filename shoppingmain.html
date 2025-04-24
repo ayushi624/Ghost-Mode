@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Minga London Style Page</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header class="navbar">
     <div class="logo">Ghost Mode</div>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="#">NEW IN</a>
       <a href="#">SHOP</a>
       <a href="#">COLLECTIONS</a>
@@ -18,7 +19,7 @@
       <span>🔍</span>
       <span>👤</span>
       <span>❤️</span>
-      <span id="cart-icon">🛍️</span>
+      <span id="cart-icon">🛍️<span class="cart-count">0</span></span>
     </div>
   </header>
 
@@ -37,19 +38,20 @@
       <button>SALE</button>
     </div>
 
-    <div class="dropdowns">
+  <div class="dropdowns">
       <div class="dropdown">
-        <button class="dropdown-toggle">Product Type +</button>
-        <ul class="dropdown-menu">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="productTypeMenu">Product Type +</button>
+        <ul id="productTypeMenu" class="dropdown-menu">
           <li>Tops</li>
           <li>Hoodies</li>
           <li>Pants</li>
           <li>Dresses</li>
         </ul>
       </div>
+
       <div class="dropdown">
-        <button class="dropdown-toggle">Size +</button>
-        <ul class="dropdown-menu">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="sizeMenu">Size +</button>
+        <ul id="sizeMenu" class="dropdown-menu">
           <li>XS</li>
           <li>S</li>
           <li>M</li>
@@ -57,18 +59,20 @@
           <li>XL</li>
         </ul>
       </div>
+
       <div class="dropdown">
-        <button class="dropdown-toggle">Color +</button>
-        <ul class="dropdown-menu">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="colorMenu">Color +</button>
+        <ul id="colorMenu" class="dropdown-menu">
           <li>Black</li>
           <li>White</li>
           <li>Red</li>
           <li>Green</li>
         </ul>
       </div>
+
       <div class="dropdown">
-        <button class="dropdown-toggle">Sort +</button>
-        <ul class="dropdown-menu">
+        <button class="dropdown-toggle" aria-expanded="false" aria-controls="sortMenu">Sort +</button>
+        <ul id="sortMenu" class="dropdown-menu">
           <li>Newest</li>
           <li>Price: Low to High</li>
           <li>Price: High to Low</li>
@@ -87,5 +91,7 @@
     </div>
     <div id="cartItems"></div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

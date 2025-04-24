@@ -462,3 +462,8 @@ body {
 ul li a {
   text-decoration: none;
 }
+
+.footer-links a,
+.help-icon {
+  text-decoration: none;
+}
