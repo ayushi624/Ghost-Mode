@@ -89,33 +89,6 @@ const reviewsContainer = document.getElementById('reviewsList');
 let selectedSize = null;
 let selectedColor = null;
 
-// Theme Toggle Functionality
-function initializeTheme() {
-  // Check for user preference
-  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  // Load saved theme or use system preference
-  const savedTheme = localStorage.getItem('theme') || (prefersDarkMode ? 'dark' : 'light');
-  
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
-  
-  // Update the theme text
-  updateThemeText();
-}
-
-function toggleTheme() {
-  const isDarkMode = document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  updateThemeText();
-}
-
-function updateThemeText() {
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  themeToggleBtn.textContent = isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-}
-
 // Size Buttons
 function createSizeButtons() {
   sizeButtonsContainer.innerHTML = '';
