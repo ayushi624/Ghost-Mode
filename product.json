@@ -1,0 +1,26 @@
+[
+    {
+      "id": 103,
+      "product-name-breadcrumb": "Raw Washed Sweatpants" ,
+      "mainImage": "https://us.mingalondon.com/cdn/shop/files/raw-wash-sweatpants_3_540x.jpg?v=1742402367",
+      "product-name": "Raw Washed Sweatpants" ,
+      "product-price" : "7800" ,
+      "description": "",
+    //   "img": "https://us.mingalondon.com/cdn/shop/files/secret-keeper-silver-charm-necklace_3.jpg?v=1731688865",
+    //   "name": "Nexus O-Ring choker",
+    //   "category": "Jewelry",
+    //   "size": "S",
+    //   "color": "Pink",
+    //   "price": "₹1,200",
+    //   "description": "A beautiful choker with edgy aesthetic."
+    },
+    {
+      "id": 102,
+      "product-name-breadcrumb": "",
+      "mainImage": "",
+      "product-name": "" ,
+      "product-price" : "",
+      "description": ""
+    }
+  ]
+  
