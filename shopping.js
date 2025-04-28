@@ -27,8 +27,8 @@ const products = [
 {
   id: "103",
   title: "Raw Washed Sweatpants",
-  price: "₹7,800.00",
-  priceValue: 7800,
+  price: "₹2,850.00",
+  priceValue: 2850,
   image: "https://us.mingalondon.com/cdn/shop/files/raw-wash-sweatpants_3_540x.jpg?v=1742402367",
   type: "Pants",
   color: "Black",
