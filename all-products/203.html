@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Mode - E-commerce</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Navigation -->
+      <div class="dark-mode-toggle">
+        <button id="themeToggle">Toggle Dark Mode</button>
+      </div>
+
+      <!-- Product Page Content -->
+      <div id="product-page" class="container">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+          <a href="index.html">HOME</a> /
+          <span id="product-name-breadcrumb">Cute Wander Denim Shoulder Bag</span>
+        </div>
+
+        <!-- Product Detail Grid -->
+        <div class="product-grid">
+          <!-- Product Gallery -->
+          <div class="product-gallery">
+            <div class="main-image">
+              <img
+                id="mainImage"
+                src="https://us.mingalondon.com/cdn/shop/files/Cute-Wander-Denim-Multi-Pockets-Bag-2_1800x1800.jpg?v=1726563054"
+                alt="Product Image"
+              />
+            </div>
+            <div class="thumbnail-container" id="thumbnailContainer">
+              <!-- Thumbnails will be added here by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info">
+            <h1 id="product-name">Cute Wander Denim Shoulder Bag</h1>
+            <p id="product-price" class="price">Rs. 5,250</p>
+
+            <!-- Size Selection -->
+            <div class="size-selection">
+              <div class="size-header">
+                <label>SIZE</label>
+                <button id="sizeGuide">Size guide</button>
+              </div>
+              <div class="size-buttons" id="sizeButtons">
+                <!-- Size buttons will be added here by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Color Selection -->
+            <div class="color-selection">
+              <label>COLOR</label>
+              <div class="color-buttons" id="colorButtons">
+                <!-- Color buttons will be added here by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Add to Bag Button -->
+            <button id="addToBag" class="add-to-bag-button">ADD TO BAG</button>
+
+            <!-- Shipping Info -->
+            <div class="shipping-info">
+              <div class="info-box">
+                <span class="icon">↩</span>
+                <div class="info-text">30 DAYS<br />RETURN POLICY</div>
+              </div>
+              <div class="info-box">
+                <span class="icon">✈</span>
+                <div class="info-text">EXPRESS SHIPPING<br />AVAILABLE</div>
+              </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+              <div class="tab">
+                <button class="tab-button" onclick="toggleTab('description')">
+                  DESCRIPTION
+                </button>
+                <div id="description" class="tab-content">
+                  <p>Shoutout to the bag ur outfits can not live without</p>
+                  <ul>
+                    <li>Grey washed denim buckle shoulder bag </li>
+                    <li>White teddy keychain and lace bows </li>
+                    <li>Multi pockets</li>
+                    <li>Eyelets details</li>
+                    <li>Zip-top closure</li>
+                    <li>Two handles </li>
+                    <li>100% cotton</li>
+                  <li>Approx. 32 x 20 x 10 cm / 13 x 8 x 4 "</li>
+                  <!-- <li>70% cotton, 30% polyester</li> -->
+                  </ul>
+                  <!-- <p>Siqi wears size S and is 165 cm | 5'5" tall</p> -->
+                </div>
+              </div>
+
+              <div class="tab">
+                <button class="tab-button" onclick="toggleTab('delivery')">
+                  DELIVERY & RETURNS
+                </button>
+                <div id="delivery" class="tab-content" style="display: none">
+                  <p>Free standard shipping on all orders over Rs. 5,000.</p>
+                  <p>Express shipping available for an additional fee.</p>
+                  <p>
+                    Returns accepted within 30 days of delivery. Items must be
+                    unworn with original tags attached.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Complete The Look Section -->
+        <section class="complete-look">
+          <h2>COMPLETE THE LOOK</h2>
+          <div class="related-products" id="relatedProducts">
+            <!-- Related products will be added here by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Product Reviews Section -->
+        <section class="product-reviews">
+          <h2>CUSTOMER REVIEWS</h2>
+          <div class="review-stats">
+            <div class="average-rating">
+              <span class="big-rating">4.8</span>
+              <div class="stars">★★★★★</div>
+              <span>Based on 12 reviews</span>
+            </div>
+            <div class="rating-breakdown">
+              <div class="rating-bar">
+                <span>5 Stars</span>
+                <div class="bar">
+                  <div class="fill" style="width: 85%"></div>
+                </div>
+                <span>85%</span>
+              </div>
+              <div class="rating-bar">
+                <span>4 Stars</span>
+                <div class="bar">
+                  <div class="fill" style="width: 10%"></div>
+                </div>
+                <span>10%</span>
+              </div>
+              <div class="rating-bar">
+                <span>3 Stars</span>
+                <div class="bar">
+                  <div class="fill" style="width: 5%"></div>
+                </div>
+                <span>5%</span>
+              </div>
+              <div class="rating-bar">
+                <span>2 Stars</span>
+                <div class="bar">
+                  <div class="fill" style="width: 0%"></div>
+                </div>
+                <span>0%</span>
+              </div>
+              <div class="rating-bar">
+                <span>1 Star</span>
+                <div class="bar">
+                  <div class="fill" style="width: 0%"></div>
+                </div>
+                <span>0%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-list" id="reviewsList">
+            <!-- Reviews will be added here by JavaScript -->
+          </div>
+        </section>
+      </div>
+      <!-- Newsletter Section -->
+      <section class="newsletter-section">
+        <div class="newsletter-content">
+          <div class="logo-icon">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 0L35.3205 10V30L20 40L4.67949 30V10L20 0Z"
+                fill="#ffffff"
+              />
+              <path
+                d="M20 10L27.6795 15V25L20 30L12.3205 25V15L20 10Z"
+                fill="#000000"
+              />
+            </svg>
+          </div>
+          <h2>GET 15% OFF YOUR NEXT ORDER</h2>
+          <p>
+            Sign up to our newsletter for exclusive offers, new arrivals and
+            more!
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+            />
+            <button type="submit">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>MY ACCOUNT</h3>
+            <ul>
+              <li><a href="#">TRACK MY ORDER</a></li>
+              <li><a href="#">ORDER HISTORY</a></li>
+              <li><a href="#">START A RETURN</a></li>
+              <li><a href="#">WISHLIST</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>HELP</h3>
+            <ul>
+              <li><a href="#">FAQS</a></li>
+              <li><a href="#">SHIPPING</a></li>
+              <li><a href="#">RETURNS</a></li>
+              <li><a href="#">SIZE GUIDE</a></li>
+              <li><a href="#">CONTACT US</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>ABOUT US</h3>
+            <ul>
+              <li><a href="#">ABOUT US</a></li>
+              <li><a href="#">BRAND RESPONSIBILITY</a></li>
+              <li><a href="#">MAGAZINE</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>FOR YOU</h3>
+            <ul>
+              <li><a href="#">STUDENT DISCOUNT</a></li>
+              <li><a href="#">GIFT CARDS</a></li>
+              <li><a href="#">AFTERPAY</a></li>
+              <li><a href="#">KLARNA</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="social-section">
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22.018 5.53c-.25.11-.5.207-.76.292.27-.322.492-.684.673-1.082.052-.114.044-.247-.021-.354-.064-.105-.174-.176-.297-.19-.123-.013-.244.033-.322.124-.484.56-1.047 1.014-1.679 1.341-.066.034-.141.052-.216.052-.051 0-.101-.008-.15-.026-.718-.312-1.486-.47-2.272-.47-1.606 0-3.088.774-4.01 2.072-.862 1.21-1.132 2.733-.733 4.156-2.841-.144-5.312-1.394-7.256-3.364-.092-.094-.225-.134-.352-.106-.127.028-.235.116-.271.241-.317 1.092-.281 2.24.104 3.286.169.46.403.888.698 1.272-.081-.015-.162-.036-.242-.062-.12-.038-.252-.015-.352.064-.099.079-.156.2-.155.328.009 1.243.549 2.411 1.46 3.186-.032 0-.064-.004-.096-.008-.123-.017-.245.031-.327.13-.082.097-.11.229-.075.351.481 1.68 1.747 2.949 3.34 3.356-.311.173-.635.32-.975.434-.86.292-1.772.472-2.709.536-.18.011-.327.143-.346.326-.019.182.092.353.267.405 2.179.646 4.487.98 6.82.98 5.15 0 8.337-2.458 10.172-4.461 2.282-2.495 3.585-5.819 3.585-9.115 0-.128-.003-.259-.01-.388.993-.747 1.82-1.682 2.468-2.769.075-.127.069-.288-.016-.408-.088-.12-.234-.179-.377-.15z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.293 1.199-.332 1.365-.053.225-.173.273-.4.164-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="app-store-buttons">
+            <a href="https://fz97v0jg.tapc.art/" class="app-store-button">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0268/4449/5987/files/download_our_app.svg?v=1683028332"
+                alt="Download on the App Store"
+              />
+            </a>
+            <a href="https://fz97v0jg.tapc.art/" class="app-store-button">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0268/4449/5987/files/download_ours_app.svg?v=1683028332"
+                alt="Get it on Google Play"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-links">
+            <a href="#">PRIVACY POLICY</a>
+            <a href="#">TERMS OF USE</a>
+          </div>
+          <div class="copyright">
+            <p>COPYRIGHT © 2025</p>
+            <a href="#" class="help-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+                />
+              </svg>
+              <span>Help</span>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Product Data
+      const productData = {
+        id: 1,
+        name: "RAW WASHED SWEATPANTS",
+        price: 2850,
+        description: "We bet these are in your moodboard.",
+        composition: "70% cotton, 30% polyester",
+        careInstructions:
+          "Machine wash at 30°C, do not bleach, do not tumble dry",
+        availableSizes: ["One-Size"],
+        availableColors: [
+          // { id: 1, name: "Black", hex: "#000000" },
+          { id: 2, name: "Grey", hex: "#888888" },
+          // { id: 3, name: "Washed Black", hex: "#333333" },
+        ],
+        images: [
+          {
+            id: 1,
+            url: "https://us.mingalondon.com/cdn/shop/files/Cute-Wander-Denim-Multi-Pockets-Bag-2_900x.jpg?v=1726563054",
+            alt: "RAW WASHED SWEATPANTS front view",
+          },
+          {
+            id: 2,
+            url: "https://us.mingalondon.com/cdn/shop/files/Cute_Wander_Denim_Multi_Pockets_Bag3_900x.jpg?v=1726563060",
+            alt: "RAW WASHED SWEATPANTS side view",
+          },
+          {
+            id: 3,
+            url: "https://us.mingalondon.com/cdn/shop/files/Cute_Wander_Denim_Multi_Pockets_Bag5_900x.jpg?v=1726563060",
+            alt: "RAW WASHED SWEATPANTS back view",
+          },
+          {
+            id: 4,
+            url: "https://us.mingalondon.com/cdn/shop/files/Cute_Wander_Denim_Multi_Pockets_Bag1_900x.jpg?v=1726563060",
+            alt: "RAW WASHED SWEATPANTS detail",
+          },
+        ],
+        reviews: [
+          {
+            id: 1,
+            username: "Laura-Jean",
+            rating: 5,
+            title: "Amazing Necklace, one of a kind!",
+            content:
+              "I've been looking for a stylish and cool necklace for a while, and this is exactly what I needed.",
+            date: "2025-02-15",
+          },
+          // {
+          //   id: 2,
+          //   username: "AudioFashionista",
+          //   rating: 4,
+          //   title: "Great everyday pants",
+          //   content:
+          //     "Love these for casual wear. The material is thick enough for cooler weather but still breathable. Only reason for 4 stars is that they run slightly large.",
+          //   date: "2025-01-20",
+          // },
+          // {
+          //   id: 3,
+          //   username: "PodcastDiva",
+          //   rating: 5,
+          //   title: "My new favorites",
+          //   content:
+          //     "I wear these constantly! The washed black color is perfect and goes with everything. They're comfortable for long recording sessions and look put-together enough for casual meetings.",
+          //   additional: "I'm 5'7\" and the L fits perfectly",
+          //   date: "2025-03-05",
+          // },
+        ],
+      };
+
+      // Related Products
+      const relatedProducts = [
+        {
+          id: 2,
+          name: "Heartbeat Vest Top",
+          price: 1450,
+          imageUrl:
+            "https://us.mingalondon.com/cdn/shop/files/Heartbeat_Vest_Top3_720x.jpg?v=1726071307",
+        },
+        {
+          id: 3,
+          name: "Rae Washed Layered Hoodie",
+          price: 7400,
+          imageUrl:
+            "https://us.mingalondon.com/cdn/shop/files/raw-wash-hoodie_6_720x.jpg?v=1742402383",
+        },
+        {
+          id: 4,
+          name: "Abyss Vegan Shoulder Bag",
+          price: 3050,
+          imageUrl:
+            "https://us.mingalondon.com/cdn/shop/files/abyss-vegan-leather-shoulder-bag_3_720x.jpg?v=1731688792",
+        },
+        {
+          id: 5,
+          name: "Gig Black Creeper Shoes",
+          price: 2600,
+          imageUrl:
+            "https://us.mingalondon.com/cdn/shop/files/RIP-grey-leg-warmers-_5_720x.jpg?v=1733498777",
+        },
+      ];
+
+      // DOM Elements
+      const themeToggleBtn = document.getElementById("themeToggle");
+      const addToBagBtn = document.getElementById("addToBag");
+      const sizeButtonsContainer = document.getElementById("sizeButtons");
+      const colorButtonsContainer = document.getElementById("colorButtons");
+      const thumbnailContainer = document.getElementById("thumbnailContainer");
+      const mainImage = document.getElementById("mainImage");
+      const relatedProductsContainer =
+        document.getElementById("relatedProducts");
+      const reviewsContainer = document.getElementById("reviewsList");
+
+      // Variables to track selections
+      let selectedSize = null;
+      let selectedColor = null;
+
+      // Theme Toggle Functionality
+      function initializeTheme() {
+        // Check for user preference
+        const prefersDarkMode =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Load saved theme or use system preference
+        const savedTheme =
+          localStorage.getItem("theme") || (prefersDarkMode ? "dark" : "light");
+
+        if (savedTheme === "dark") {
+          document.body.classList.add("dark-mode");
+        }
+
+        // Update the theme text
+        updateThemeText();
+      }
+
+      function toggleTheme() {
+        const isDarkMode = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        updateThemeText();
+      }
+
+      function updateThemeText() {
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        themeToggleBtn.textContent = isDarkMode
+          ? "Switch to Light Mode"
+          : "Switch to Dark Mode";
+      }
+
+      // Size Buttons
+      function createSizeButtons() {
+        sizeButtonsContainer.innerHTML = "";
+
+        productData.availableSizes.forEach((size) => {
+          const button = document.createElement("button");
+          button.className = "size-button";
+          button.textContent = size;
+          button.addEventListener("click", () => selectSize(size, button));
+          sizeButtonsContainer.appendChild(button);
+        });
+      }
+
+      function selectSize(size, buttonElement) {
+        // Reset previously selected
+        const buttons = sizeButtonsContainer.querySelectorAll(".size-button");
+        buttons.forEach((btn) => btn.classList.remove("selected"));
+
+        // Set new selection
+        selectedSize = size;
+        buttonElement.classList.add("selected");
+      }
+
+      // Color Buttons
+      function createColorButtons() {
+        colorButtonsContainer.innerHTML = "";
+
+        productData.availableColors.forEach((color) => {
+          const button = document.createElement("button");
+          button.className = "color-button";
+          button.style.backgroundColor = color.hex;
+          button.setAttribute("data-color-id", color.id);
+          button.setAttribute("title", color.name);
+          button.addEventListener("click", () => selectColor(color, button));
+          colorButtonsContainer.appendChild(button);
+        });
+      }
+
+      function selectColor(color, buttonElement) {
+        // Reset previously selected
+        const buttons = colorButtonsContainer.querySelectorAll(".color-button");
+        buttons.forEach((btn) => btn.classList.remove("selected"));
+
+        // Set new selection
+        selectedColor = color;
+        buttonElement.classList.add("selected");
+      }
+
+      // Product Gallery
+      function createThumbnails() {
+        thumbnailContainer.innerHTML = "";
+
+        productData.images.forEach((image, index) => {
+          const thumbnail = document.createElement("div");
+          thumbnail.className = `thumbnail ${index === 0 ? "active" : ""}`;
+
+          const img = document.createElement("img");
+          img.src = image.url;
+          img.alt = image.alt;
+
+          thumbnail.appendChild(img);
+          thumbnail.addEventListener("click", () =>
+            changeMainImage(image.url, thumbnail)
+          );
+          thumbnailContainer.appendChild(thumbnail);
+        });
+
+        // Set initial main image
+        mainImage.src = productData.images[0].url;
+        mainImage.alt = productData.images[0].alt;
+      }
+
+      function changeMainImage(url, thumbnailElement) {
+        mainImage.src = url;
+
+        // Update active thumbnail
+        const thumbnails = thumbnailContainer.querySelectorAll(".thumbnail");
+        thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+        thumbnailElement.classList.add("active");
+      }
+
+      // Related Products
+      function createRelatedProducts() {
+        relatedProductsContainer.innerHTML = "";
+
+        relatedProducts.forEach((product) => {
+          const productElement = document.createElement("a");
+          productElement.href = `#product-${product.id}`;
+          productElement.className = "related-product";
+
+          const imageContainer = document.createElement("div");
+          imageContainer.className = "related-product-image";
+
+          const img = document.createElement("img");
+          img.src = product.imageUrl;
+          img.alt = product.name;
+
+          const name = document.createElement("h3");
+          name.textContent = product.name;
+
+          const price = document.createElement("p");
+          price.textContent = `Rs. ${product.price.toLocaleString()}`;
+
+          imageContainer.appendChild(img);
+          productElement.appendChild(imageContainer);
+          productElement.appendChild(name);
+          productElement.appendChild(price);
+
+          relatedProductsContainer.appendChild(productElement);
+        });
+      }
+
+      // Reviews
+      function createReviews() {
+        reviewsContainer.innerHTML = "";
+
+        productData.reviews.forEach((review) => {
+          const reviewElement = document.createElement("div");
+          reviewElement.className = "review";
+
+          const header = document.createElement("div");
+          header.className = "review-header";
+
+          const author = document.createElement("div");
+          author.className = "review-author";
+          author.textContent = review.username;
+
+          const date = document.createElement("div");
+          date.className = "review-date";
+          date.textContent = formatDate(review.date);
+
+          const stars = document.createElement("div");
+          stars.className = "review-stars";
+          stars.textContent =
+            "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+          header.appendChild(author);
+          header.appendChild(date);
+
+          const title = document.createElement("div");
+          title.className = "review-title";
+          title.textContent = review.title;
+
+          const content = document.createElement("div");
+          content.className = "review-content";
+          content.textContent = review.content;
+
+          reviewElement.appendChild(header);
+          reviewElement.appendChild(stars);
+
+          if (review.title) {
+            reviewElement.appendChild(title);
+          }
+
+          reviewElement.appendChild(content);
+
+          if (review.additional) {
+            const additional = document.createElement("div");
+            additional.className = "review-additional";
+            additional.textContent = review.additional;
+            reviewElement.appendChild(additional);
+          }
+
+          reviewsContainer.appendChild(reviewElement);
+        });
+      }
+
+      // Tab functionality
+      function toggleTab(tabId) {
+        const tabContent = document.getElementById(tabId);
+        const isHidden = tabContent.style.display === "none";
+
+        // Hide all tabs first
+        const allTabs = document.querySelectorAll(".tab-content");
+        allTabs.forEach((tab) => {
+          tab.style.display = "none";
+        });
+
+        // Remove active class from all tab buttons
+        const allTabButtons = document.querySelectorAll(".tab-button");
+        allTabButtons.forEach((button) => {
+          button.classList.remove("active");
+        });
+
+        // Show the clicked tab if it was hidden
+        if (isHidden) {
+          tabContent.style.display = "block";
+          document
+            .querySelector(`button[onclick="toggleTab('${tabId}')"]`)
+            .classList.add("active");
+        }
+      }
+
+      // Add to Cart Functionality
+      function addToBag() {
+        if (!selectedSize || !selectedColor) {
+          alert("Please select both a size and color before adding to bag.");
+          return;
+        }
+
+        const item = {
+          productId: productData.id,
+          name: productData.name,
+          price: productData.price,
+          size: selectedSize,
+          colorId: selectedColor.id,
+          colorName: selectedColor.name,
+          imageUrl: productData.images[0].url,
+          quantity: 1,
+        };
+
+        // In a real application, you would send this to an API
+        // For now, we'll just store it in localStorage
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        cart.push(item);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Item added to bag successfully!");
+      }
+
+      // Newsletter Functionality
+      function handleNewsletterSubmit(event) {
+        event.preventDefault();
+        const email = document.getElementById("emailInput").value;
+
+        if (email) {
+          // In a real app, you would send this to an API
+          // For now, we'll just show a success message
+          alert(
+            `Thank you for subscribing with ${email}! Your 15% discount code is WELCOME15`
+          );
+          document.getElementById("emailInput").value = "";
+        }
+      }
+
+      // Helper Functions
+      function formatDate(dateString) {
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+      }
+
+      // Initialize the page
+      function init() {
+        initializeTheme();
+        createSizeButtons();
+        createColorButtons();
+        createThumbnails();
+        createRelatedProducts();
+        createReviews();
+
+        // Set initial tab
+        document.getElementById("description").style.display = "block";
+        document
+          .querySelector(`button[onclick="toggleTab('description')"]`)
+          .classList.add("active");
+
+        // Event Listeners
+        themeToggleBtn.addEventListener("click", toggleTheme);
+        addToBagBtn.addEventListener("click", addToBag);
+        document
+          .getElementById("sizeGuide")
+          .addEventListener("click", () =>
+            alert("Size guide feature coming soon!")
+          );
+
+        // Newsletter form submission
+        const newsletterForm = document.getElementById("newsletterForm");
+        if (newsletterForm) {
+          newsletterForm.addEventListener("submit", handleNewsletterSubmit);
+        }
+      }
+
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>
