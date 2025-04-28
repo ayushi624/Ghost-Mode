@@ -2,7 +2,8 @@ const productGrid = document.getElementById("product-grid");
 const cart = [];
 const cartPanel = document.getElementById("cartPanel");
 const cartItemsEl = document.getElementById("cartItems");
-
+a.href = product.link; // "all-products/101.html"
+a.innerText = product.title;
 const products = [
 {
   id: "101",
@@ -12,6 +13,7 @@ const products = [
   image: "https://us.mingalondon.com/cdn/shop/files/occult-baby-tee_2_540x.jpg?v=1742402582",
   type: "Tops",
   color: "White",
+  link: "all-products/101.html",
   sizes: ["S", "M", "L"]
 },
 {
