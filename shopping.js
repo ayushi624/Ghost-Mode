@@ -5,6 +5,7 @@ const cartItemsEl = document.getElementById("cartItems");
 
 const products = [
 {
+  id: "101",
   title: "Occult Baby Tee",
   price: "₹3,700.00",
   priceValue: 3700,
@@ -14,6 +15,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "102",
   title: "Raw Washed Hoodie",
   price: "₹7,800.00",
   priceValue: 7800,
@@ -23,6 +25,7 @@ const products = [
   sizes: ["S", "M", "L", "XL"]
 },
 {
+  id: "103",
   title: "Raw Washed Sweatpants",
   price: "₹7,800.00",
   priceValue: 7800,
@@ -32,6 +35,7 @@ const products = [
   sizes: ["S", "M", "L", "XL"]
 },
 {
+  id: "104",
   title: "Mia Black Zip Up Hoodie",
   price: "₹10,100.00",
   priceValue: 10100,
@@ -41,6 +45,7 @@ const products = [
   sizes: ["S", "M", "XL"]
 },
 {
+  id: "105",
   title: "Savage Denim Hot Pants",
   price: "₹6,100.00",
   priceValue: 6100,
@@ -50,6 +55,7 @@ const products = [
   sizes: ["M", "L", "XL"]
 },
 {
+  id: "106",
   title: "Mia Pink Zip Up Hoodie",
   price: "₹10,100.00",
   priceValue: 10100,
@@ -59,6 +65,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "107",
   title: "Purrfection Zip Up Hoodie",
   price: "₹7,800.00",
   priceValue: 7800,
@@ -68,6 +75,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "108",
   title: "Iron Washed Zip Up Hoodie",
   price: "₹8,700.00",
   priceValue: 8700,
@@ -77,6 +85,7 @@ const products = [
   sizes: ["M", "L", "XL"]
 },
 {
+  id: "109",
   title: "Thorn Black Sweater",
   price: "₹7,800.00",
   priceValue: 7800,
@@ -86,6 +95,7 @@ const products = [
   sizes: ["S", "M", "L", "XL"]
 },
 {
+  id: "110",
   title: "Crush Black Baggy Flare Jeans",
   price: "₹10,100.00",
   priceValue: 10100,
@@ -95,6 +105,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "111",
   title: "Lex Black Washed Sweat Shorts",
   price: "₹7,000.00",
   priceValue: 7000,
@@ -104,6 +115,7 @@ const products = [
   sizes: ["One Size"]
 },
 {
+  id: "112",
   title: "Venom Zip Hoodie",
   price: "₹8,700.00",
   priceValue: 8700,
@@ -113,6 +125,7 @@ const products = [
   sizes: ["S","M","L"]
 },
 {
+  id: "113",
   title: "Guardian Angel Baby Tee",
   price: "₹3,700.00",
   priceValue: 3700,
@@ -122,6 +135,7 @@ const products = [
   sizes: ["S", "M"]
 },
 {
+  id: "114",
   title: "Kiara Baby Tee",
   price: "₹4,800.00",
   priceValue: 4800,
@@ -131,6 +145,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "115",
   title: "Dystopian Vest Top",
   price: "₹3,700.00",
   priceValue: 3700,
@@ -140,6 +155,7 @@ const products = [
   sizes: ["M", "L"]
 },
 {
+  id: "116",
   title: "Lex Grey Washed Sweat Shorts",
   price: "₹7,000.00",
   priceValue: 7000,
@@ -149,6 +165,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "117",
   title: "Storm Knitted Zip-Up Hoodie",
   price: "₹8,700.00",
   priceValue: 8700,
@@ -158,6 +175,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "118",
   title: "Grime Baby Tee",
   price: "₹4,200.00",
   priceValue: 4200,
@@ -167,6 +185,7 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
+  id: "119",
   title: "Insane Zip Up Hoodie",
   price: "₹7,800.00",
   priceValue: 7800,
@@ -176,6 +195,7 @@ const products = [
   sizes: ["S", "M", "L", "XL"]
 },
 {
+  id: "120",
   title: "Viber Tube Top",
   price: "₹3,700.00",
   priceValue: 3700,
