@@ -2,8 +2,7 @@ const productGrid = document.getElementById("product-grid");
 const cart = [];
 const cartPanel = document.getElementById("cartPanel");
 const cartItemsEl = document.getElementById("cartItems");
-a.href = product.link; // "all-products/101.html"
-a.innerText = product.title;
+
 const products = [
 {
   id: "101",
