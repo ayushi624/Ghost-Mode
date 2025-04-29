@@ -10,5 +10,10 @@
 - 4-column responsive product grid with 24 items
 - Stylish, modern design using HTML, CSS, and JavaScript
 
-## 📁 Project Structure
+## 🧱 Project Layout
 
+- **Header:** Includes logo and navigation (New In, Shop, Collections, Sale)
+- **Category Tabs:** Highlighted options for browsing different styles
+- **Filters:** Dropdowns (Product Type, Size, Colour)
+- **Product Grid:** 4-column responsive layout with 24 items
+- **Footer:** Clean footer 
