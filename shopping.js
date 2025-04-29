@@ -12,6 +12,7 @@ const products = [
   image: "https://us.mingalondon.com/cdn/shop/files/occult-baby-tee_2_540x.jpg?v=1742402582",
   type: "Tops",
   color: "White",
+  link: "all-products/101.html",
   sizes: ["S", "M", "L"]
 },
 {
