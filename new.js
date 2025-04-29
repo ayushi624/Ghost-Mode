@@ -219,7 +219,7 @@ function renderProducts() {
       <div class="overlay">
         <button class="add-to-bag">ADD TO BAG</button>
         <div class="sizes">
-          ${p.sizes.map(s => <button>${s}</button>).join("")}
+          ${p.sizes.map(s => `<button>${s}</button>`).join("")}
         </div>
       </div>
       <div class="product-info">
