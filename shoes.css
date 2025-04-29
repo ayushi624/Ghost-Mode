@@ -169,11 +169,12 @@ a {
 
 /* Footer */
 .footer {
-  padding: 0 10%;
+  padding: 30px 10% 0; /* Top: 30px, Left/Right: 10%, Bottom: 0 */
   margin: 0;
   background-color: black;
   color: white;
 }
+
 
 .footer-columns {
   display: grid;
