@@ -5,138 +5,123 @@ const cartItemsEl = document.getElementById("cartItems");
 
 const products = [
 {
-  id: "101",
-  title: "Occult Baby Tee",
-  price: "₹3,700.00",
-  priceValue: 3700,
-  image: "https://us.mingalondon.com/cdn/shop/files/occult-baby-tee_2_540x.jpg?v=1742402582",
-  type: "Tops",
-  color: "White",
-  link: "all-products/101.html",
-  sizes: ["S", "M", "L"]
-},
-{
-  id: "102",
-  title: "Raw Washed Hoodie",
-  price: "₹7,800.00",
-  priceValue: 7800,
-  image: "https://us.mingalondon.com/cdn/shop/files/raw-wash-hoodie_3_540x.jpg?v=1742402347",
-  type: "Hoodies",
-  color: "Black",
-  sizes: ["S", "M", "L", "XL"]
-},
-{
-  id: "103",
-  title: "Raw Washed Sweatpants",
-  price: "₹2,850.00",
-  priceValue: 2850,
-  image: "https://us.mingalondon.com/cdn/shop/files/raw-wash-sweatpants_3_540x.jpg?v=1742402367",
-  type: "Pants",
-  color: "Black",
-  sizes: ["S", "M", "L", "XL"]
-},
-{
-  id: "104",
-  title: "Mia Black Zip Up Hoodie",
+  title: "Cursed Zip Up Hoodie",
   price: "₹10,100.00",
   priceValue: 10100,
-  image: "https://us.mingalondon.com/cdn/shop/files/Mia-black-zip-up-hoodie-minga3.jpg?v=1738853190",
-  type: "Hoodies",
-  color: "Black",
-  sizes: ["S", "M", "XL"]
-},
-{
-  id: "105",
-  title: "Savage Denim Hot Pants",
-  price: "₹6,100.00",
-  priceValue: 6100,
-  image: "https://us.mingalondon.com/cdn/shop/files/savage-denim-hot-pants_3.jpg?v=1744908247",
-  type: "Pants",
-  color: "Green",
-  sizes: ["M", "L", "XL"]
-},
-{
-  id: "106",
-  title: "Mia Pink Zip Up Hoodie",
-  price: "₹10,100.00",
-  priceValue: 10100,
-  image: "https://us.mingalondon.com/cdn/shop/files/Purrfection-zip-up-hoodie1.jpg?v=1738853250",
-  type: "Hoodies",
-  color: "Purple",
-  sizes: ["S", "M", "L"]
-},
-{
-  id: "107",
-  title: "Purrfection Zip Up Hoodie",
-  price: "₹7,800.00",
-  priceValue: 7800,
-  image: "https://us.mingalondon.com/cdn/shop/files/Purrfection-zip-up-hoodie1_ee5d42de-9576-4021-8a33-13ab4d65f8ce.jpg?v=1738853318",
+  image: "https://us.mingalondon.com/cdn/shop/files/cursed-khaki-zip-up-hoodie_1_540x.jpg?v=1744901151",
   type: "Hoodies",
   color: "Black",
   sizes: ["S", "M", "L"]
 },
 {
-  id: "108",
-  title: "Iron Washed Zip Up Hoodie",
-  price: "₹8,700.00",
-  priceValue: 8700,
-  image: "https://us.mingalondon.com/cdn/shop/files/iron-grey-wash-zip-up-hoodie_1.jpg?v=1742402454",
-  type: "Hoodies",
-  color: "Grey",
-  sizes: ["M", "L", "XL"]
-},
-{
-  id: "109",
-  title: "Thorn Black Sweater",
-  price: "₹7,800.00",
-  priceValue: 7800,
-  image: "https://us.mingalondon.com/cdn/shop/files/thorns-black-knit-sweater_5.jpg?v=1741195199",
-  type: "Knitwear",
-  color: "Black",
-  sizes: ["S", "M", "L", "XL"]
-},
-{
-  id: "110",
-  title: "Crush Black Baggy Flare Jeans",
-  price: "₹10,100.00",
-  priceValue: 10100,
-  image: "https://us.mingalondon.com/cdn/shop/files/crush-black-baggy-flare-jeans_3.jpg?v=1741195066",
-  type: "Jeans",
-  color: "Black",
-  sizes: ["S", "M", "L"]
-},
-{
-  id: "111",
-  title: "Lex Black Washed Sweat Shorts",
-  price: "₹7,000.00",
-  priceValue: 7000,
-  image: "https://us.mingalondon.com/cdn/shop/files/lex-black-washed-sweat-shorts_1.jpg?v=1742987429",
-  type: "Jeans",
-  color: "Black",
-  sizes: ["One Size"]
-},
-{
-  id: "112",
-  title: "Venom Zip Hoodie",
-  price: "₹8,700.00",
-  priceValue: 8700,
-  image: "https://us.mingalondon.com/cdn/shop/files/Venom_Zip_Up_Hoodie1.jpg?v=1743603747",
-  type: "Hoodies",
-  color: "Black",
-  sizes: ["S","M","L"]
-},
-{
-  id: "113",
   title: "Guardian Angel Baby Tee",
   price: "₹3,700.00",
   priceValue: 3700,
   image: "https://us.mingalondon.com/cdn/shop/files/guardian-angel-cross-white-baby-tee_1.jpg?v=1744901201",
   type: "Tops",
   color: "White",
+  sizes: ["S", "M", "L", "XL"]
+},
+{
+  title: "Savage Denim Hot Pants",
+  price: "₹6,100.00",
+  priceValue: 6100,
+  image: "https://us.mingalondon.com/cdn/shop/files/savage-denim-hot-pants_3.jpg?v=1744908247",
+  type: "Pants",
+  color: "Black",
+  sizes: ["S", "M", "L", "XL"]
+},
+{
+  title: "Grime Baby Tee",
+  price: "₹4,200.00",
+  priceValue: 4200,
+  image: "https://us.mingalondon.com/cdn/shop/files/grime-baby-tee_4.jpg?v=1744901142",
+  type: "Tops",
+  color: "Black",
+  sizes: ["S", "M", "XL"]
+},
+{
+  title: "Divine Soul Off-Shoulder Top",
+  price: "₹4,900.00",
+  priceValue: 4900,
+  image: "https://us.mingalondon.com/cdn/shop/files/divine-soul-off-shoulder-top_5_706c6e93-568f-4ede-b2c4-850a2b52d356.jpg?v=1744901186",
+  type: "Tops",
+  color: "Black",
+  sizes: ["M", "L", "XL"]
+},
+{
+  title: "Winged Dagger Asymmetric Top",
+  price: "₹4,800.00",
+  priceValue: 4800,
+  image: "https://us.mingalondon.com/cdn/shop/files/winged-dagger-asymmetric-top_1.jpg?v=1744901079",
+  type: "Tops",
+  color: "White",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Elsie Black Flared Jeans",
+  price: "₹9,200.00",
+  priceValue: 9200,
+  image: "https://us.mingalondon.com/cdn/shop/files/elsie-black-washed-flared-jeans_5.jpg?v=1744901062",
+  type: "Pants",
+  color: "Black",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Crucifix Zip Up Hoodie",
+  price: "₹10,100.00",
+  priceValue: 10100,
+  image: "https://us.mingalondon.com/cdn/shop/files/iron-grey-wash-zip-up-hoodie_1.jpg?v=1742402454",
+  type: "Hoodies",
+  color: "Grey",
+  sizes: ["M", "L", "XL"]
+},
+{
+  title: "Nightmare Washed T-shirt",
+  price: "₹4,800.00",
+  priceValue: 4800,
+  image: "https://us.mingalondon.com/cdn/shop/files/nightmare-washed-t-shirt_1.jpg?v=1744901108",
+  type: "Tops",
+  color: "Brown",
+  sizes: ["S", "M", "L", "XL"]
+},
+{
+  title: "Dystopian Vest Top",
+  price: "₹3,700.00",
+  priceValue: 3700,
+  image: "https://us.mingalondon.com/cdn/shop/files/Dystopian_Vest_Top1.jpg?v=1743603910",
+  type: "Tops",
+  color: "White",
+  sizes: ["S", "M", "L"]
+},
+{
+  title: "Rave Graphic Baggy Jeans",
+  price: "₹9,200.00",
+  priceValue: 9200,
+  image: "https://us.mingalondon.com/cdn/shop/files/rave-graphic-baggy-jeans_5.jpg?v=1743765593",
+  type: "Jeans",
+  color: "Black",
+  sizes: ["S","M"]
+},
+{
+  title: "Aryana Black Cut-Out Top",
+  price: "₹4,800.00",
+  priceValue: 4800,
+  image: "https://cdn.shopify.com/s/files/1/0530/0577/9130/files/Aryana_Black_Cut-Out_Top3_540x.jpg?v=1743603481",
+  type: "Tops",
+  color: "Black",
+  sizes: ["S","M","L"]
+},
+{
+  title: "Venom Zip Up Hoodie",
+  price: "₹8,700.00",
+  priceValue: 8700,
+  image: "https://us.mingalondon.com/cdn/shop/files/Venom_Zip_Up_Hoodie1.jpg?v=1743603747",
+  type: "Hoodies",
+  color: "Black",
   sizes: ["S", "M"]
 },
 {
-  id: "114",
   title: "Kiara Baby Tee",
   price: "₹4,800.00",
   priceValue: 4800,
@@ -146,17 +131,15 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
-  id: "115",
-  title: "Dystopian Vest Top",
+  title: "Viper Tube Top",
   price: "₹3,700.00",
   priceValue: 3700,
-  image: "https://us.mingalondon.com/cdn/shop/files/Dystopian_Vest_Top1.jpg?v=1743603910",
+  image: "https://us.mingalondon.com/cdn/shop/files/Viper_Tube_Top4.jpg?v=1743609637",
   type: "Tops",
-  color: "White",
+  color: "Black",
   sizes: ["M", "L"]
 },
 {
-  id: "116",
   title: "Lex Grey Washed Sweat Shorts",
   price: "₹7,000.00",
   priceValue: 7000,
@@ -166,17 +149,15 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
-  id: "117",
-  title: "Storm Knitted Zip-Up Hoodie",
-  price: "₹8,700.00",
-  priceValue: 8700,
-  image: "https://us.mingalondon.com/cdn/shop/files/storm-knitted-zip-up-hoodie-cardigan_1.jpg?v=1742402394",
+  title: "Gritty Zip-Up Hoodie",
+  price: "₹7,800.00",
+  priceValue: 7800,
+  image: "https://us.mingalondon.com/cdn/shop/files/gritty-zip-up-hoodie_1.jpg?v=1742402491",
   type: "Hoodies",
   color: "Black",
   sizes: ["S", "M", "L"]
 },
 {
-  id: "118",
   title: "Grime Baby Tee",
   price: "₹4,200.00",
   priceValue: 4200,
@@ -186,7 +167,6 @@ const products = [
   sizes: ["S", "M", "L"]
 },
 {
-  id: "119",
   title: "Insane Zip Up Hoodie",
   price: "₹7,800.00",
   priceValue: 7800,
@@ -196,13 +176,12 @@ const products = [
   sizes: ["S", "M", "L", "XL"]
 },
 {
-  id: "120",
-  title: "Viber Tube Top",
-  price: "₹3,700.00",
-  priceValue: 3700,
-  image: "https://us.mingalondon.com/cdn/shop/files/Viper_Tube_Top4.jpg?v=1743609637",
-  type: "Tops",
-  color: "Black",
+  title: "Kai Taupe Knitted Zip Up Hoodie",
+  price: "₹7,000.00",
+  priceValue: 7000,
+  image: "https://us.mingalondon.com/cdn/shop/files/kai-taupe-knitted-zip-up-hoodie_5.jpg?v=1741194991",
+  type: "Hoodies",
+  color: "Brown",
   sizes: ["M", "L"]
 }
 ];

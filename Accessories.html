@@ -234,6 +234,47 @@
           grid-template-columns: 1fr;
         }
       }
+
+      #productGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
+        gap: 30px; /* space between cards */
+        padding: 40px;
+      }
+
+      .product-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        padding: 15px;
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 300px; /* bigger height */
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+      .product-card h3 {
+        font-size: 18px;
+        margin: 15px 0 8px 0;
+        color: #333;
+      }
+
+      .product-card p {
+        font-size: 16px;
+        font-weight: bold;
+        color: #555;
+      }
     </style>
   </head>
   <body>
@@ -317,192 +358,240 @@
           category: "Jewelry",
           size: "S",
           color: "Pink",
-          price: "₹1,200",
+          price: "₹2,250",
+          link: "all-products/201.html",
         },
         {
           id: "202",
           img: "https://us.mingalondon.com/cdn/shop/files/Obsidian-Ring-Set_be94fc48-6f6b-48fe-8081-d77864bb8088.jpg?v=1735318280",
+          name: "Obsidian Ring Set",
           category: "Jewelry",
           size: "S",
           color: "Pink",
           price: "₹1,250",
+          link: "all-products/202.html",
         },
         {
           id: "203",
           img: "https://us.mingalondon.com/cdn/shop/files/Cute-Wander-Denim-Multi-Pockets-Bag-2.jpg?v=1726563054",
+          name: "Cute Wander Bag",
           category: "Bags",
           size: "M",
           color: "Purple",
-          price: "₹1,100",
+          price: "₹5,250",
+          link: "all-products/203.html",
         },
         {
           id: "204",
           img: "https://us.mingalondon.com/cdn/shop/files/abyss-vegan-leather-shoulder-bag_4.jpg?v=1731688792",
+          name: "Abyss Vegan Shoulder Bag",
           category: "Bags",
           size: "M",
           color: "Purple",
-          price: "₹1,150",
+          price: "₹7,450",
+          link: "all-products/204.html",
         },
         {
           id: "205",
           img: "https://us.mingalondon.com/cdn/shop/files/hodgepodge-multicolored-beaded-necklace_1.jpg?v=1741790990",
+          name: "Hodgepodge Beaded Necklace",
           category: "Jewelry",
           size: "S",
           color: "White",
-          price: "₹1,300",
+          price: "₹2,500",
+          link: "all-products/205.html",
         },
         {
           id: "206",
           img: "https://us.mingalondon.com/cdn/shop/files/gleaming-cross-pendant-necklace-set_2.jpg?v=1734693612",
+          name: "Gleaming Cross Necklace Set",
           category: "Jewelry",
           size: "S",
           color: "White",
-          price: "₹1,320",
+          price: "₹1,900",
+          link: "all-products/206.html",
         },
         {
           id: "207",
           img: "https://us.mingalondon.com/cdn/shop/files/harsh-silver-charm-necklace_4.jpg?v=1731688868",
+          name: "Harsh Charm Necklace",
           category: "Jewelry",
           size: "M",
           color: "Gold",
-          price: "₹1,500",
+          price: "₹2,500",
+          link: "all-products/207.html",
         },
         {
           id: "208",
           img: "https://us.mingalondon.com/cdn/shop/files/saint-sinner-necklace-set.jpg?v=1741790998",
+          name: "",
           category: "Jewelry",
           size: "M",
           color: "Gold",
           price: "₹1,520",
+          link: "all-products/208.html",
         },
         {
           id: "209",
           img: "https://us.mingalondon.com/cdn/shop/files/Jade_Vegan_Shoulder_Bag1.jpg?v=1729260916",
+          name: "",
           category: "Bags",
           size: "L",
           color: "Black",
           price: "₹1,800",
+          link: "all-products/209.html",
         },
         {
           id: "210",
           img: "https://us.mingalondon.com/cdn/shop/files/patch-me-up-khaki-canvas-messenger-bag_2.jpg?v=1730378092",
+          name: "",
           category: "Bags",
           size: "L",
           color: "Black",
           price: "₹1,820",
+          link: "all-products/210.html",
         },
         {
           id: "211",
           img: "https://us.mingalondon.com/cdn/shop/files/RIP-grey-leg-warmers-_5.jpg?v=1733498777",
+          name: "",
           category: "Socks",
           size: "M",
           color: "Multicolor",
           price: "₹700",
+          link: "all-products/211.html",
         },
         {
           id: "212",
           img: "https://us.mingalondon.com/cdn/shop/files/EcomSleazeOct240741.jpg?v=1728052238",
+          name: "",
           category: "Socks",
           size: "M",
           color: "Multicolor",
           price: "₹750",
+          link: "all-products/212.html",
         },
         {
           id: "213",
           img: "https://us.mingalondon.com/cdn/shop/files/Bunny_Plush_Backpack1.jpg?v=1722611070",
+          name: "",
           category: "Bags",
           size: "L",
           color: "Black",
           price: "₹1,700",
+          link: "all-products/213.html",
         },
         {
           id: "214",
           img: "https://us.mingalondon.com/cdn/shop/files/Nyx_Furry_Crossbody_Bag3.jpg?v=1726071363",
+          name: "",
           category: "Bags",
           size: "L",
           color: "Black",
           price: "₹1,720",
+          link: "all-products/214.html",
         },
         {
           id: "215",
           img: "https://us.mingalondon.com/cdn/shop/files/Elektra-Black-Metallic-Hole-Headband5.jpg?v=1715255467",
+          name: "",
           category: "Hair",
           size: "S",
           color: "Silver",
           price: "₹600",
+          link: "all-products/215.html",
         },
         {
           id: "216",
           img: "https://us.mingalondon.com/cdn/shop/files/astral-silver-hair-clips-set_3.jpg?v=1731688762",
+          name: "",
           category: "Hair",
           size: "S",
           color: "Silver",
           price: "₹650",
+          link: "all-products/216.html",
         },
         {
           id: "217",
           img: "https://us.mingalondon.com/cdn/shop/files/corset-love-tights2.jpg?v=1738928970",
+          name: "",
           category: "Socks",
           size: "M",
           color: "Purple",
           price: "₹700",
+          link: "all-products/217.html",
         },
         {
           id: "218",
           img: "https://us.mingalondon.com/cdn/shop/files/obscure-black-leg-warmers_4.jpg?v=1731688839",
+          name: "",
           category: "Socks",
           size: "M",
           color: "Purple",
           price: "₹750",
+          link: "all-products/218.html",
         },
         {
           id: "219",
           img: "https://us.mingalondon.com/cdn/shop/files/elektra-grey-headband3.jpg?v=1738852875",
+          name: "",
           category: "Hair",
           size: "S",
           color: "Multicolor",
           price: "₹680",
+          link: "all-products/219.html",
         },
         {
           id: "220",
           img: "https://us.mingalondon.com/cdn/shop/files/Elektra-Green-Metallic-Hole-Headband4.jpg?v=1715255468",
+          name: "",
           category: "Hair",
           size: "S",
           color: "Multicolor",
           price: "₹700",
+          link: "all-products/220.html",
         },
         {
           id: "221",
           img: "https://us.mingalondon.com/cdn/shop/files/unbreakable-silver-ring-set_2_391fe978-7e0d-42ca-af35-50a9e5ac356a.jpg?v=1741194945",
+          name: "",
           category: "Jewelry",
           size: "S",
           color: "White",
           price: "₹1,100",
+          link: "all-products/221.html",
         },
         {
           id: "222",
           img: "https://us.mingalondon.com/cdn/shop/files/007_8785790b-11f6-49a0-9f15-947c876a086f.jpg?v=1715191711",
+          name: "",
           category: "Jewelry",
           size: "S",
           color: "White",
           price: "₹1,150",
+          link: "all-products/222.html",
         },
         {
           id: "223",
           img: "https://us.mingalondon.com/cdn/shop/files/rhapsody-brown-wash-crossbody-bag_3.jpg?v=1738344536",
+          name: "",
           category: "Bags",
           size: "L",
           color: "Pink",
           price: "₹1,850",
+          link: "all-products/223.html",
         },
         {
           id: "224",
           img: "https://us.mingalondon.com/cdn/shop/files/Jade_Vegan_Shoulder_Bag1.jpg?v=1729260916",
+          name: "",
           category: "Bags",
           size: "L",
           color: "Pink",
           price: "₹1,870",
+          link: "all-products/224.html",
         },
+        // ...(continue rest of products here, same as you had)
       ];
 
       const productGrid = document.getElementById("productGrid");
@@ -514,13 +603,29 @@
 
       function displayProducts(filtered) {
         productGrid.innerHTML = "";
-        filtered.forEach((p) => {
-          productGrid.innerHTML += `
-          <div class="product">
-            <img src="${p.img}" alt="product">
-            <p>${p.category}</p>
-            <p>${p.price}</p>
-          </div>`;
+        filtered.forEach((product) => {
+          const card = document.createElement("div");
+          card.classList.add("product-card");
+
+          const aTag = document.createElement("a");
+          aTag.href = product.link || "#";
+
+          const img = document.createElement("img");
+          img.src = product.img;
+          img.alt = product.name || "Product";
+
+          const name = document.createElement("h3");
+          name.innerText = product.name || "";
+
+          const price = document.createElement("p");
+          price.innerText = product.price || "";
+
+          aTag.appendChild(img);
+          aTag.appendChild(name);
+          aTag.appendChild(price);
+
+          card.appendChild(aTag);
+          productGrid.appendChild(card);
         });
       }
 
@@ -553,9 +658,9 @@
           link.classList.add("active");
           filterProducts();
         });
-        const themeToggle = document.getElementById("theme-toggle");
       });
 
+      // Display all products initially
       displayProducts(products);
     </script>
   </body>
