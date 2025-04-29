@@ -6,28 +6,130 @@
   <title>Minga London Style Page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="new.css"/>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Ghost Mode</div>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#">NEW IN</a>
-      <a href="#">SHOP</a>
-      <a href="#">COLLECTIONS</a>
-      <a class="sale" href="#">SALE</a>
-    </nav>
-<div class="icons">
-  <span><i class="fas fa-search"></i></span>
-  <span><i class="fas fa-user"></i></span>
-  <span><i class="fas fa-heart"></i></span>
-  <span id="cart-icon">
-    <i class="fas fa-shopping-bag"></i>
-    <span class="cart-count"></span>
-  </span>
-</div>
+  <!-- 🔳 Navbar -->
+    <div class="navbar">
+      <div class="nav-left">
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logo">Ghost Mode</div>
+        <div class="nav-links">
+          <a href="ghost mode.html" id="collectionLink">Collection</a>
+          <a href="shoppingmain.html">Shop</a>
+          <a href="new.html">New In</a>
+          <a href="sale.html" id="saleLink">Sale</a>
+        </div>
+      </div>
 
+      <div class="nav-right">
+        <button><i class="fas fa-search"></i></button>
+        <button><i class="fas fa-heart"></i></button>
+        <a href="http://localhost:3000/signup.html"
+          ><button><i class="fas fa-user"></i></button
+        ></a>
+        <button><i class="fas fa-shopping-cart"></i></button>
+      </div>
+    </div>
 
-  </header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="menu" id="menu">
+      <ul>
+        <li>
+          <a href="index.html"
+            ><span class="material-symbols-outlined">home</span>Home</a
+          >
+        </li>
+        <li>
+          <a href="shoppingmain.html"
+            ><span class="material-symbols-outlined">checkroom</span>Clothing</a
+          >
+        </li>
+        <li>
+          <a href="shoes.html"
+            ><span class="fas fa-shoe-prints"></span>Footwear</a
+          >
+        </li>
+        <li>
+          <a href="Accessories.html"
+            ><span class="material-symbols-outlined">watch</span>Accessories</a
+          >
+        </li>
+        <li>
+          <a href="sale.html"
+            ><span class="material-symbols-outlined">sell</span>Sale</a
+          >
+        </li>
+        <li>
+          <a href="ghost mode.html"
+            ><span class="material-symbols-outlined">style</span>Collection</a
+          >
+        </li>
+
+        <li>
+          <a href="product-page/contact.html"
+            ><span class="material-symbols-outlined">email</span>Contact</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><span class="material-symbols-outlined">group</span>About Us</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><span class="material-symbols-outlined">logout</span>Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- 🌌 Collection Dropdown Panel -->
+    <div id="collectionDropdown" class="collection-dropdown">
+      <div class="collection-grid">
+        <div class="collection-box">
+          <img
+            src="https://us.mingalondon.com/cdn/shop/files/gritty-zip-up-hoodie_2_540x.jpg"
+            alt="Tops"
+          />
+          <p>Tops</p>
+        </div>
+        <div class="collection-box">
+          <img
+            src="https://us.mingalondon.com/cdn/shop/files/gritty-sweat-shorts_2_540x.jpg"
+            alt="Bottoms"
+          />
+          <p>Bottoms</p>
+        </div>
+        <div class="collection-box">
+          <img
+            src="https://us.mingalondon.com/cdn/shop/files/iron-grey-wash-zip-up-hoodie_2_720x.jpg"
+            alt="Outerwear"
+          />
+          <p>Outerwear</p>
+        </div>
+        <div class="collection-box">
+          <img
+            src="https://us.mingalondon.com/cdn/shop/files/minga-black-wash-t-shirt_2_540x.jpg"
+            alt="Tees"
+          />
+          <p>Tees</p>
+        </div>
+      </div>
+    </div>
+
 
   <main>
     <h1 class="title">NEW IN</h1>
